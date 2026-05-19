@@ -15,7 +15,21 @@ input,select,textarea,button{font-family:inherit}
 input[type=range]{accent-color:#c8a96e;width:100%}
 input[type=checkbox]{accent-color:#c8a96e}
 .card{background:#15151f;border:1px solid #1f1f2e;border-radius:12px;padding:18px}
-.surface{background:#111119;border:1px solid #1f1f2e;border-radius:8px;padding:10px 12px}
+.inp{width:100%;background:#111119;border:1px solid #1f1f2e;border-radius:6px;padding:7px 10px;color:#e8e4dc;font-size:12px}
+.btn{border:none;border-radius:7px;padding:8px 18px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-accent{background:#c8a96e;color:#000}
+.btn-red{background:#f8717122;color:#f87171;border:1px solid #f8717133}
+.btn-muted{background:transparent;color:#6b6880;border:1px solid #1f1f2e}
+.btn-blue{background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa33}
+.tab-btn{background:transparent;border:none;border-bottom:2px solid transparent;color:#6b6880;padding:11px 14px;font-size:11px;font-weight:400;cursor:pointer;white-space:nowrap;letter-spacing:0.05em;font-family:inherit;transition:all 0.15s}
+.tab-btn.active{border-bottom-color:#c8a96e;color:#c8a96e;font-weight:700}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.slabel{color:#6b6880;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{padding:10px 12px;color:#6b6880;font-size:10px;font-weight:600;text-align:left;white-space:nowrap;border-bottom:1px solid #1f1f2e}
+td{padding:9px 12px;border-bottom:1px solid #1f1f2e18}
+tr:hover td{background:#ffffff04;cursor:pointer}
+.mono{font-family:'DM Mono',monospace;font-weight:600}
 .pill{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
 .pill-green{background:#4ade8022;color:#4ade80}
 .pill-red{background:#f8717122;color:#f87171}
@@ -23,72 +37,69 @@ input[type=checkbox]{accent-color:#c8a96e}
 .pill-blue{background:#60a5fa22;color:#60a5fa}
 .pill-accent{background:#c8a96e22;color:#c8a96e}
 .pill-muted{background:#2a2a3a;color:#6b6880}
-.btn{border:none;border-radius:7px;padding:8px 18px;font-size:12px;font-weight:700;cursor:pointer}
-.btn-accent{background:#c8a96e;color:#000}
-.btn-red{background:#f8717122;color:#f87171;border:1px solid #f8717133}
-.btn-muted{background:transparent;color:#6b6880;border:1px solid #1f1f2e}
-.tab-btn{background:transparent;border:none;border-bottom:2px solid transparent;color:#6b6880;padding:11px 14px;font-size:11px;font-weight:400;cursor:pointer;white-space:nowrap;letter-spacing:0.05em;font-family:inherit}
-.tab-btn.active{border-bottom-color:#c8a96e;color:#c8a96e;font-weight:700}
-.inp{width:100%;background:#111119;border:1px solid #1f1f2e;border-radius:6px;padding:7px 10px;color:#e8e4dc;font-size:12px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.flex{display:flex;gap:10px;flex-wrap:wrap}
-.slabel{color:#6b6880;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
-table{width:100%;border-collapse:collapse;font-size:12px}
-th{padding:10px 12px;color:#6b6880;font-size:10px;font-weight:600;text-align:left;white-space:nowrap;border-bottom:1px solid #1f1f2e}
-td{padding:9px 12px;border-bottom:1px solid #1f1f2e11}
-tr:hover td{background:#ffffff05}
-.mono{font-family:'DM Mono',monospace;font-weight:600}
+.pill-purple{background:#a78bfa22;color:#a78bfa}
+.stat-card{background:#111119;border:1px solid #1f1f2e;border-radius:10px;padding:14px 18px;flex:1;min-width:130px}
+.conf-btn{border-radius:5px;padding:4px 9px;font-size:11px;cursor:pointer;font-family:inherit;transition:all 0.15s}
+.conf-btn.active{background:#c8a96e33;color:#c8a96e;border:1px solid #c8a96e}
+.conf-btn.inactive{background:transparent;color:#6b6880;border:1px solid #1f1f2e}
+.check-item{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:8px;cursor:pointer;transition:all 0.15s;border:1px solid #1f1f2e;background:#111119;margin-bottom:7px}
+.check-item.checked{background:#4ade8010;border-color:#4ade8044}
+.check-box{width:18px;height:18px;border-radius:4px;border:2px solid #2a2a3a;background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:#000;margin-top:1px;transition:all 0.15s}
+.check-box.checked{background:#4ade80;border-color:#4ade80}
+.insight-card{background:#15151f;border:1px solid #1f1f2e;border-radius:10px;padding:16px;margin-bottom:10px}
+.insight-field{margin-bottom:10px}
+.insight-label{color:#c8a96e;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;font-weight:700}
+.insight-value{color:#e8e4dc;font-size:13px;line-height:1.6}
+.bar-day{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
 </style>
 </head>
 <body>
-
-<div id="app">
-  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px">
-    <div style="color:#c8a96e;font-size:32px;font-weight:800">TraderMind</div>
-    <div style="color:#6b6880;font-size:13px">Verbinde mit Datenbank...</div>
-  </div>
-</div>
+<div id="app"><div style="min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px"><div style="color:#c8a96e;font-size:32px;font-weight:800;letter-spacing:-0.02em">TraderMind</div><div style="color:#6b6880;font-size:13px">Lade Daten...</div></div></div>
 
 <script>
-const SB_URL = "https://brojvgxxdevhyarrienw.supabase.co";
-const SB_KEY = "sb_publishable_7Wf0NVejexufbyrgm9CeJg_mN49Do5e";
-const C = {bg:"#0b0b10",surface:"#111119",card:"#15151f",border:"#1f1f2e",accent:"#c8a96e",green:"#4ade80",red:"#f87171",yellow:"#fbbf24",blue:"#60a5fa",text:"#e8e4dc",muted:"#6b6880",dim:"#2a2a3a"};
-
-const STRATEGIES = ["XAU V","SPX/NQ Hunter","BOSS","BTC Trend Follow","Altcoin Ribbon"];
-const INSTRUMENTS = {"XAU V":["XAUUSD"],"SPX/NQ Hunter":["US500","US100"],"BOSS":["GBPJPY","AUDCAD","USDJPY","GBPUSD"],"BTC Trend Follow":["BTCUSD"],"Altcoin Ribbon":["ALTCOIN (manuell)"]};
-const CONFLUENCES = {"XAU V":["1.5%+ Expansion","CHoCH bestätigt","FVG 1M","FVG 5M","Golden Pocket","Asia LQ swept","London High/Low","Liquidity Grab"],"SPX/NQ Hunter":["LQ Sweep","BOS LTF","Dienstag (A+)","Mittwoch (A+)","Donnerstag (früh)","Montag (beobachten)","Freitag (nur früh)","15:30-17:30","Asia H/L swept","Daily H/L flip","Flip-Tag (5-10R)","Kein News-Event","Liquidity Grab"],"BOSS":["HTF Bias klar","BOS auf H1","Orderblock","FVG","Kein News-Event","London Session","Liquidity Grab"],"BTC Trend Follow":["4H Trend bullish","1H BOS","15M Pullback","Golden Pocket","Orderblock","Liquidity Grab"],"Altcoin Ribbon":["3+ TFs aligned (grün)","3+ TFs aligned (rot)","Liquidity Grab","BOS bestätigt","FVG vorhanden","FVG unter Golden Pocket","Golden Pocket Pullback","Marktcap <1Mrd","Coin <30% bewegt"]};
-const CHECKLISTS = {"XAU V":["1.5%+ Expansion in LQ-Zone?","CHoCH klar sichtbar?","FVG auf 1M identifiziert?","FVG auf 5M bestätigt?","Liquidity Grab vorhanden?","Entry im FVG?","Target: gegenüb. Golden Pocket?","Partial bei 1:1 geplant?","Max 1% Risiko gesetzt?"],"SPX/NQ Hunter":["WOCHENTAG: Di/Mi = A+ | Do = nur 15:30–16:00 | Mo/Fr = sehr vorsichtig","FLIP-TAG? Asia H/L + Daily H/L → mehr riskieren, Runner trailen!","15:30–17:30 MEZ? (Entry bis 16:30)","News-Pause OK? (CPI/FOMC/NFP/PCE: 30min vorher)","LQ-Sweep / Liquidity Grab klar?","BOS auf LTF bestätigt?","Bias klar? (Long: Sweep unten+BOS oben)","Instrument mit LQ-Zug gewählt?","Erst 1 Trade heute?"],"BOSS":["HTF-Bias klar?","Setup auf richtigem Pair?","1:2 RR erreichbar?","Entry-Trigger vorhanden?","Liquidity Grab stattgefunden?","Kein News-Event?","London Session aktiv?"],"BTC Trend Follow":["4H + 1H + 15M aligned?","BOS auf 1H bestätigt?","Liquidity Grab auf LTF?","Entry an Orderblock/GP?","BTC-Trend bullish?","Max 1% Risiko gesetzt?"],"Altcoin Ribbon":["ANALYZER A: Mind. 3/5 TFs aligned? (15M/1H/4H/Daily/Weekly)","KEIN Entry gegen den Trend!","Liquidity Grab vorhanden?","BOS sauber bestätigt?","FVG vorhanden? (idealerweise unter GP)","Entry erst ab Golden Pocket oder später!","ZIEL mit LQ Grab: nächstes High (RR >2)","ZIEL ohne LQ Grab: nur 1:1 RR","Marktcap unter 1 Mrd Dollar?","Coin-Bewegung prüfen (Crypto Bubbles)","Max 1% Risiko gesetzt?"]};
-const STRATEGY_INFO = {"XAU V":{pair:"XAUUSD",session:"London",rr:"1:2 (Partial 1:1)",wr:"~60%",desc:"Gold-Strategie. 1.5%+ Expansion in LQ-Zone → CHoCH → FVG 1M+5M → Entry. Ziel: gegenüb. Golden Pocket. Partial bei 1:1."},"SPX/NQ Hunter":{pair:"US500 / US100",session:"NY 15:30–17:30 MEZ",rr:"1:2 (A+: Runner)",wr:"~55–65%",desc:"Di/Mi = A+ Setup, voller Runner. Do = nur frühe NY-Beats. Mo/Fr = vorsichtig. Flip-Tage: Asia H/L + Daily H/L → 5-10R. Flat 17:30."},"BOSS":{pair:"GBPJPY / AUDCAD / USDJPY / GBPUSD",session:"London",rr:"1:2",wr:"~50%",desc:"Forex-Strategie. HTF-Bias als Grundlage, Entry über BOS + Orderblock oder FVG auf LTF."},"BTC Trend Follow":{pair:"BTCUSD",session:"Opportunistisch",rr:"~1:5 (Trendfolge)",wr:"~65%",desc:"BTC Trend-Following auf 15M. 4H+1H+15M aligned. LQ Grab auf LTF. Entry nach BOS auf 1H an OB oder GP."},"Altcoin Ribbon":{pair:"Altcoins (Crypto)",session:"Opportunistisch (inkl. Wochenende)",rr:"1:1 (ohne LQ) / >2 (mit LQ)",wr:"~60–70%",desc:"Analyzer A: mind. 3/5 TFs aligned. Mit LQ Grab → nächstes High (RR >2). Ohne → nur 1:1. Entry ab Golden Pocket. Marktcap <1Mrd."}};
-
-async function sbReq(path, opts={}) {
-  const r = await fetch(`${SB_URL}/rest/v1/${path}`, {
-    headers:{"apikey":SB_KEY,"Authorization":`Bearer ${SB_KEY}`,"Content-Type":"application/json","Prefer":opts.prefer??"return=representation",...(opts.headers||{})},
-    method:opts.method||"GET", body:opts.body
-  });
-  const t = await r.text();
-  if(!r.ok) throw new Error(t);
-  return t ? JSON.parse(t) : [];
+// ── SUPABASE ──────────────────────────────────────────────────────────────────
+const SB_URL="https://brojvgxxdevhyarrienw.supabase.co";
+const SB_KEY="sb_publishable_7Wf0NVejexufbyrgm9CeJg_mN49Do5e";
+async function sbReq(path,opts={}){
+  const r=await fetch(`${SB_URL}/rest/v1/${path}`,{headers:{"apikey":SB_KEY,"Authorization":`Bearer ${SB_KEY}`,"Content-Type":"application/json","Prefer":opts.prefer??"return=representation",...(opts.headers||{})},method:opts.method||"GET",body:opts.body});
+  const t=await r.text();if(!r.ok)throw new Error(t);return t?JSON.parse(t):[];
 }
-
-const db = {
-  trades:{
-    list:()=>sbReq("trades?order=date.desc,id.desc"),
-    add:(d)=>sbReq("trades",{method:"POST",body:JSON.stringify(d)}),
-    upd:(id,d)=>sbReq(`trades?id=eq.${id}`,{method:"PATCH",body:JSON.stringify(d)}),
-    del:(id)=>sbReq(`trades?id=eq.${id}`,{method:"DELETE",prefer:""})
-  },
-  accounts:{
-    list:()=>sbReq("prop_accounts?order=id.asc"),
-    add:(d)=>sbReq("prop_accounts",{method:"POST",body:JSON.stringify(d)}),
-    del:(id)=>sbReq(`prop_accounts?id=eq.${id}`,{method:"DELETE",prefer:""})
-  },
-  mental:{
-    list:()=>sbReq("mental_checkins?order=created_at.desc&limit=30"),
-    add:(d)=>sbReq("mental_checkins",{method:"POST",body:JSON.stringify(d)})
-  }
+const db={
+  trades:{list:()=>sbReq("trades?order=date.desc,id.desc"),add:(d)=>sbReq("trades",{method:"POST",body:JSON.stringify(d)}),upd:(id,d)=>sbReq(`trades?id=eq.${id}`,{method:"PATCH",body:JSON.stringify(d)}),del:(id)=>sbReq(`trades?id=eq.${id}`,{method:"DELETE",prefer:""})},
+  accounts:{list:()=>sbReq("prop_accounts?order=id.asc"),add:(d)=>sbReq("prop_accounts",{method:"POST",body:JSON.stringify(d)}),upd:(id,d)=>sbReq(`prop_accounts?id=eq.${id}`,{method:"PATCH",body:JSON.stringify(d)}),del:(id)=>sbReq(`prop_accounts?id=eq.${id}`,{method:"DELETE",prefer:""})},
+  mental:{list:()=>sbReq("mental_checkins?order=created_at.desc&limit=30"),add:(d)=>sbReq("mental_checkins",{method:"POST",body:JSON.stringify(d)})},
+  insights:{list:()=>sbReq("insights?order=created_at.desc&limit=50"),add:(d)=>sbReq("insights",{method:"POST",body:JSON.stringify(d)}),del:(id)=>sbReq(`insights?id=eq.${id}`,{method:"DELETE",prefer:""})}
 };
 
-function mapTrade(t){return{...t,imgs:[t.img_big||null,t.img_entry||null,t.img_exit||null],propAccount:t.prop_account||"",confluences:Array.isArray(t.confluences)?t.confluences:[],rulebased:t.rulebased!==false,r:parseFloat(t.r)||0};}
+// ── CONSTANTS ─────────────────────────────────────────────────────────────────
+const STRATEGIES=["XAU V","SPX/NQ Hunter","BOSS","BTC Trend Follow","Altcoin Ribbon"];
+const INSTRUMENTS={"XAU V":["XAUUSD"],"SPX/NQ Hunter":["US500","US100"],"BOSS":["GBPJPY","AUDCAD","USDJPY","GBPUSD"],"BTC Trend Follow":["BTCUSD"],"Altcoin Ribbon":["ALTCOIN (manuell)"]};
+const CONFLUENCES={"XAU V":["1.5%+ Expansion","CHoCH bestätigt","FVG 1M","FVG 5M","Golden Pocket","Asia LQ swept","London High/Low","Liquidity Grab"],"SPX/NQ Hunter":["LQ Sweep","BOS LTF","Dienstag (A+)","Mittwoch (A+)","Donnerstag (früh)","Montag (beobachten)","Freitag (nur früh)","15:30-17:30","Asia H/L swept","Daily H/L flip","Flip-Tag (5-10R)","Kein News-Event","Liquidity Grab"],"BOSS":["HTF Bias klar","BOS auf H1","Orderblock","FVG","Kein News-Event","London Session","Liquidity Grab"],"BTC Trend Follow":["4H Trend bullish","1H BOS","15M Pullback","Golden Pocket","Orderblock","Liquidity Grab"],"Altcoin Ribbon":["3+ TFs aligned (grün)","3+ TFs aligned (rot)","Liquidity Grab","BOS bestätigt","FVG vorhanden","FVG unter Golden Pocket","Golden Pocket Pullback","Marktcap <1Mrd","Coin <30% bewegt"]};
+const CHECKLISTS={"XAU V":["1.5%+ Expansion in LQ-Zone?","CHoCH klar sichtbar?","FVG auf 1M identifiziert?","FVG auf 5M bestätigt?","Liquidity Grab vorhanden?","Entry im FVG?","Target: gegenüb. Golden Pocket?","Partial bei 1:1 geplant?","Max 1% Risiko gesetzt?"],"SPX/NQ Hunter":["WOCHENTAG: Di/Mi = A+ | Do = nur 15:30–16:00 | Mo/Fr = sehr vorsichtig","FLIP-TAG? Asia H/L + Daily H/L → mehr riskieren, Runner trailen!","15:30–17:30 MEZ? (Entry bis 16:30)","News-Pause OK? (CPI/FOMC/NFP/PCE: 30min vorher)","LQ-Sweep / Liquidity Grab klar?","BOS auf LTF bestätigt?","Bias klar? (Long: Sweep unten+BOS oben)","Instrument mit LQ-Zug gewählt (SPX o. NQ)?","Erst 1 Trade heute?"],"BOSS":["HTF-Bias klar?","Setup auf richtigem Pair?","1:2 RR erreichbar?","Entry-Trigger vorhanden?","Liquidity Grab stattgefunden?","Kein News-Event?","London Session aktiv?"],"BTC Trend Follow":["4H + 1H + 15M aligned?","BOS auf 1H bestätigt?","Liquidity Grab auf LTF?","Entry an Orderblock/GP?","BTC-Trend bullish?","Max 1% Risiko gesetzt?"],"Altcoin Ribbon":["ANALYZER A: Mind. 3/5 TFs aligned? (15M/1H/4H/Daily/Weekly)","KEIN Entry gegen den Trend!","Liquidity Grab vorhanden?","BOS sauber bestätigt?","FVG vorhanden? (idealerweise unter GP)","Entry erst ab Golden Pocket oder später!","ZIEL mit LQ Grab: nächstes High (RR >2)","ZIEL ohne LQ Grab: nur 1:1 RR","Marktcap unter 1 Mrd Dollar?","Coin-Bewegung prüfen (Crypto Bubbles)","Max 1% Risiko gesetzt?"]};
+const STRATEGY_INFO={"XAU V":{pair:"XAUUSD",session:"London",rr:"1:2 (Partial 1:1)",wr:"~60%",desc:"Gold-Strategie. 1.5%+ Expansion in LQ-Zone → CHoCH → FVG 1M+5M → Entry. Ziel: gegenüb. Golden Pocket. Partial bei 1:1."},"SPX/NQ Hunter":{pair:"US500 / US100",session:"NY 15:30–17:30 MEZ",rr:"1:2 (A+: voller Runner)",wr:"~55–65%",desc:"Di/Mi = A+ Setup, voller Runner, BE nach 3× 1M-Kerze. Do = nur frühe NY-Beats. Mo/Fr = sehr vorsichtig. Flip-Tage: Asia H/L swept + Daily H/L → 5-10R möglich. Flat 17:30 MEZ."},"BOSS":{pair:"GBPJPY / AUDCAD / USDJPY / GBPUSD",session:"London",rr:"1:2",wr:"~50%",desc:"Forex-Strategie. HTF-Bias als Grundlage, Entry über BOS + Orderblock oder FVG auf LTF. 1:2 RR fixiert."},"BTC Trend Follow":{pair:"BTCUSD",session:"Opportunistisch",rr:"~1:5 (Trendfolge)",wr:"~65%",desc:"BTC Trend-Following auf 15M. 4H+1H+15M aligned. LQ Grab auf LTF als Bestätigung. Entry nach BOS auf 1H an OB oder GP. PF ~5."},"Altcoin Ribbon":{pair:"Altcoins (Crypto)",session:"Opportunistisch (inkl. Wochenende)",rr:"1:1 (ohne LQ) / >2 (mit LQ)",wr:"~60–70%",desc:"Analyzer A: mind. 3/5 TFs aligned (grün/rot). Mit LQ Grab → nächstes High (RR >2). Ohne → nur 1:1. Entry ab Golden Pocket. FVG idealerweise unter GP. Marktcap <1Mrd. Crypto Bubbles prüfen."}};
+const INSIGHT_CATS=["Setup-Idee","Trade-Review","Marktbeobachtung","Regelverstoß","Mentale Notiz","Strategie-Anpassung","Flip-Tag-Alarm","News-Event"];
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let S={
+  tab:"Dashboard",trades:[],accounts:[],mentalHistory:[],insights:[],
+  loading:true,error:null,
+  viewTrade:null,editMode:false,showForm:false,
+  formData:null,filterStrat:"ALL",filterResult:"ALL",
+  showAddAccount:false,
+  activeStrategy:"XAU V",checkedItems:{},
+  mentalVals:{schlaf:7,energie:7,fokus:7,stress:3,motivation:8,koerper:7},
+  filterStatStrat:"ALL",filterStatQuality:"ALL",
+  kalcMode:"CFD",kalcCfg:{accountSize:100000,challengeCost:540,attempts:1,totalPayout:0,split:80,winRate:55,riskPct:1,rrRatio:2,ddLimit:10,profitTarget:10},
+  insightForm:{auswahl:"",kategorie:"Setup-Idee",strategie:"XAU V",titel:"",beobachtung:"",detail:"",aktion:"",anpassung:"",imgBig:"",imgEntry:"",imgExit:""},
+  showInsightForm:false,
+  analyzerSignals:{"15M":"neutral","1H":"neutral","4H":"neutral","Daily":"neutral","Weekly":"neutral"},
+  tfOrder:["15M","1H","4H","Daily","Weekly"]
+};
+
+function set(updates){Object.assign(S,updates);render();}
+
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+function mapTrade(t){return{...t,imgs:[t.img_big||null,t.img_entry||null,t.img_exit||null],propAccount:t.prop_account||"",confluences:Array.isArray(t.confluences)?t.confluences:[],rulebased:t.rulebased!==false,r:parseFloat(t.r)||0,entry:parseFloat(t.entry)||0,sl:parseFloat(t.sl)||0,tp:parseFloat(t.tp)||0};}
 function mapAccount(a){return{...a,challengeCost:a.challenge_cost||0,totalPaid:a.total_paid||0,totalPayout:a.total_payout||0,ddLimit:a.dd_limit||10,profitTarget:a.profit_target||10,currentProfit:a.current_profit||0,currentDD:a.current_dd||0,riskPhase:a.risk_phase||1};}
 function calcStats(trades){
   if(!trades.length)return{wr:0,pf:0,totalR:0,avgR:0,wins:0,losses:0};
@@ -98,84 +109,70 @@ function calcStats(trades){
   const pf=gL>0?gW/gL:gW>0?99:0,totalR=trades.reduce((s,t)=>s+t.r,0);
   return{wr:+wr.toFixed(1),pf:+pf.toFixed(2),totalR:+totalR.toFixed(2),avgR:+(totalR/trades.length).toFixed(2),wins:wins.length,losses:losses.length};
 }
-function pill(color,text){return`<span class="pill pill-${color}">${text}</span>`;}
-function h(tag,attrs,content){const a=Object.entries(attrs||{}).map(([k,v])=>`${k}="${v}"`).join(" ");return`<${tag}${a?" "+a:""}>${content||""}</${tag}>`;}
+function pill(color,text,small){const s=small?"1px 6px":"2px 8px",fs=small?"10px":"11px";return`<span class="pill pill-${color}" style="padding:${s};font-size:${fs}">${text}</span>`;}
+function sc(label,value,color,sub){return`<div class="stat-card"><div class="slabel" style="margin-bottom:5px">${label}</div><div class="mono" style="color:${color||"#e8e4dc"};font-size:22px">${value}</div>${sub?`<div style="color:#6b6880;font-size:10px;margin-top:3px">${sub}</div>`:""}</div>`;}
+function g(id){return document.getElementById(id);}
+function gv(id){return g(id)?.value||"";}
+function gc(id){return g(id)?.checked||false;}
 
-// App State
-let state = {tab:"Dashboard",trades:[],accounts:[],loading:true,error:null,viewTrade:null,editMode:false,checkedItems:{},formData:null,showForm:false,showAddAccount:false};
-
-function setState(updates){state={...state,...updates};render();}
-
-function el(id){return document.getElementById(id);}
-
+// ── RENDER ─────────────────────────────────────────────────────────────────────
 function render(){
-  const app = document.getElementById("app");
-  if(state.loading){app.innerHTML=`<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px"><div style="color:#c8a96e;font-size:32px;font-weight:800">TraderMind</div><div style="color:#6b6880;font-size:13px">Lade Daten...</div></div>`;return;}
-  if(state.error){app.innerHTML=`<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px"><div style="color:#f87171;font-size:16px;font-weight:700">Verbindungsfehler</div><div style="color:#6b6880;font-size:12px;max-width:400px;text-align:center">${state.error}</div><button class="btn btn-accent" onclick="init()">Neu laden</button></div>`;return;}
-  
-  const tabs = ["Dashboard","Prop Konten","Mental","Journal","Strategien","Statistik","Kalkulator"];
-  const accountDots = state.accounts.map(a=>`<div style="display:flex;align-items:center;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:${a.phase==="Funded"?"#4ade80":a.phase==="Phase 2"?"#60a5fa":"#fbbf24"}"></div><span style="color:#6b6880;font-size:10px">${a.firm} ${a.phase}</span></div>`).join("");
-  
-  app.innerHTML = `
-    <div style="border-bottom:1px solid #1f1f2e;padding:14px 22px;background:#111119;display:flex;align-items:center;justify-content:space-between">
-      <div style="display:flex;align-items:center;gap:10px">
-        <div style="width:30px;height:30px;background:#c8a96e;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#000;font-size:15px">T</div>
-        <div><div style="color:#e8e4dc;font-weight:800;font-size:15px;letter-spacing:-0.02em">TraderMind</div><div style="color:#6b6880;font-size:9px;letter-spacing:0.12em">TRADING OS</div></div>
-      </div>
-      <div style="display:flex;gap:10px">${accountDots}</div>
+  const app=document.getElementById("app");
+  if(S.loading){app.innerHTML=`<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px"><div style="color:#c8a96e;font-size:32px;font-weight:800;letter-spacing:-0.02em">TraderMind</div><div style="color:#6b6880;font-size:13px">Lade Daten...</div></div>`;return;}
+  if(S.error){app.innerHTML=`<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px"><div style="color:#f87171;font-size:16px;font-weight:700">Verbindungsfehler</div><div style="color:#6b6880;font-size:12px;max-width:400px;text-align:center">${S.error}</div><button class="btn btn-accent" onclick="init()">Neu laden</button></div>`;return;}
+  const TABS=["Dashboard","Prop Konten","Mental","Journal","Strategien","Statistik","Kalkulator","Insights"];
+  const dots=S.accounts.map(a=>`<div style="display:flex;align-items:center;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:${a.phase==="Funded"?"#4ade80":a.phase==="Phase 2"?"#60a5fa":"#fbbf24"}"></div><span style="color:#6b6880;font-size:10px">${a.firm} ${a.phase}</span></div>`).join("");
+  app.innerHTML=`
+  <div style="border-bottom:1px solid #1f1f2e;padding:14px 22px;background:#111119;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="width:30px;height:30px;background:#c8a96e;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#000;font-size:15px">T</div>
+      <div><div style="color:#e8e4dc;font-weight:800;font-size:15px;letter-spacing:-0.02em">TraderMind</div><div style="color:#6b6880;font-size:9px;letter-spacing:0.12em">TRADING OS</div></div>
     </div>
-    <div style="border-bottom:1px solid #1f1f2e;padding:0 22px;background:#111119;display:flex;overflow-x:auto">
-      ${tabs.map(t=>`<button class="tab-btn ${state.tab===t?"active":""}" onclick="setTab('${t}')">${t}</button>`).join("")}
-    </div>
-    <div style="padding:20px 22px;max-width:1080px;margin:0 auto">
-      ${renderTab()}
-    </div>
-  `;
-  attachEvents();
+    <div style="display:flex;gap:10px">${dots}</div>
+  </div>
+  <div style="border-bottom:1px solid #1f1f2e;padding:0 22px;background:#111119;display:flex;overflow-x:auto;position:sticky;top:58px;z-index:99">
+    ${TABS.map(t=>`<button class="tab-btn ${S.tab===t?"active":""}" onclick="setTab('${t}')">${t}</button>`).join("")}
+  </div>
+  <div style="padding:20px 22px;max-width:1100px;margin:0 auto">
+    ${renderTab()}
+  </div>`;
 }
 
-function setTab(t){setState({tab:t,viewTrade:null,showForm:false});}
+function setTab(t){set({tab:t,viewTrade:null,showForm:false,showInsightForm:false});}
 
 function renderTab(){
-  switch(state.tab){
-    case "Dashboard": return renderDashboard();
-    case "Prop Konten": return renderPropKonten();
-    case "Mental": return renderMental();
-    case "Journal": return renderJournal();
-    case "Strategien": return renderStrategien();
-    case "Statistik": return renderStatistik();
-    case "Kalkulator": return renderKalkulator();
-    default: return "";
+  switch(S.tab){
+    case "Dashboard":return renderDashboard();
+    case "Prop Konten":return renderPropKonten();
+    case "Mental":return renderMental();
+    case "Journal":return renderJournal();
+    case "Strategien":return renderStrategien();
+    case "Statistik":return renderStatistik();
+    case "Kalkulator":return renderKalkulator();
+    case "Insights":return renderInsights();
+    default:return "";
   }
 }
 
+// ── DASHBOARD ─────────────────────────────────────────────────────────────────
 function renderDashboard(){
-  const stats = calcStats(state.trades);
-  const today = new Date().toISOString().slice(0,10);
-  const todayTrades = state.trades.filter(t=>t.date===today);
-  const todayStats = calcStats(todayTrades);
-  let streak=0,streakType=null;
-  for(const t of state.trades){if(t.result==="BE")break;if(!streakType)streakType=t.result;if(t.result===streakType)streak++;else break;}
-  const streakColor = streakType==="WIN"?"#4ade80":streakType==="LOSS"?"#f87171":"#6b6880";
-  const totalPayout = state.accounts.reduce((s,a)=>s+a.totalPayout,0);
-  const totalPaid = state.accounts.reduce((s,a)=>s+a.totalPaid,0);
-  
-  const statCards = [
-    {label:"Gesamt P&L",value:`${stats.totalR}R`,color:stats.totalR>0?"#4ade80":"#f87171",sub:`${stats.wins}W / ${stats.losses}L`},
-    {label:"Win Rate",value:`${stats.wr}%`,color:"#c8a96e",sub:`PF: ${stats.pf}`},
-    {label:"Heute",value:`${todayStats.totalR}R`,color:todayStats.totalR>0?"#4ade80":todayStats.totalR<0?"#f87171":"#6b6880",sub:`${todayTrades.length} Trades`},
-    {label:"Streak",value:streak>0?`${streak}× ${streakType}`:"–",color:streakColor},
-    {label:"Net ROI",value:`${totalPayout-totalPaid>=0?"+":""}€${(totalPayout-totalPaid).toLocaleString()}`,color:totalPayout>=totalPaid?"#4ade80":"#f87171",sub:"Prop Gesamt"},
-  ].map(s=>`<div style="background:#111119;border:1px solid #1f1f2e;border-radius:10px;padding:14px 18px;flex:1;min-width:130px"><div style="color:#6b6880;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px">${s.label}</div><div class="mono" style="color:${s.color};font-size:22px">${s.value}</div>${s.sub?`<div style="color:#6b6880;font-size:10px;margin-top:3px">${s.sub}</div>`:""}</div>`).join("");
+  const stats=calcStats(S.trades);
+  const today=new Date().toISOString().slice(0,10);
+  const todayT=S.trades.filter(t=>t.date===today);
+  const todayS=calcStats(todayT);
+  let streak=0,sType=null;
+  for(const t of S.trades){if(t.result==="BE")break;if(!sType)sType=t.result;if(t.result===sType)streak++;else break;}
+  const totalPayout=S.accounts.reduce((s,a)=>s+a.totalPayout,0),totalPaid=S.accounts.reduce((s,a)=>s+a.totalPaid,0);
+  const net=totalPayout-totalPaid;
+  const dailyDD=todayT.filter(t=>t.result==="LOSS").reduce((s,t)=>s+Math.abs(t.r),0);
+  const ddWarn=dailyDD>=1.5;
 
-  const accountCards = state.accounts.map(a=>{
-    const phaseColor=a.phase==="Funded"?"#4ade80":a.phase==="Phase 2"?"#60a5fa":"#fbbf24";
-    const pp=Math.min((a.currentProfit/a.profitTarget*100)||0,100);
-    const dp=Math.min((a.currentDD/a.ddLimit*100)||0,100);
-    return `<div style="padding:10px 12px;background:#111119;border-radius:8px;margin-bottom:8px">
+  const accs=S.accounts.map(a=>{
+    const pp=Math.min((a.currentProfit/a.profitTarget*100)||0,100),dp=Math.min((a.currentDD/a.ddLimit*100)||0,100);
+    return`<div style="padding:10px 12px;background:#111119;border-radius:8px;margin-bottom:8px">
       <div style="display:flex;justify-content:space-between;margin-bottom:6px">
         <span style="color:#e8e4dc;font-weight:600;font-size:13px">${a.firm} ${Math.round((a.size||0)/1000)}k</span>
-        <div style="display:flex;gap:6px;align-items:center">${pill(a.phase==="Funded"?"green":a.phase==="Phase 2"?"blue":"yellow",a.phase)}<span style="color:#c8a96e;font-size:11px;font-weight:700">${a.riskPhase}% Risk</span></div>
+        <div style="display:flex;gap:6px;align-items:center">${pill(a.phase==="Funded"?"green":a.phase==="Phase 2"?"blue":"yellow",a.phase,true)}<span style="color:#c8a96e;font-size:11px;font-weight:700">${a.riskPhase}% Risk</span></div>
       </div>
       <div style="display:flex;gap:8px">
         <div style="flex:1"><div style="color:#6b6880;font-size:9px;margin-bottom:2px">Profit ${a.currentProfit}%/${a.profitTarget}%</div><div style="background:#2a2a3a;border-radius:3px;height:5px"><div style="width:${pp}%;height:100%;background:#4ade80;border-radius:3px"></div></div></div>
@@ -184,31 +181,47 @@ function renderDashboard(){
     </div>`;
   }).join("");
 
-  const recentTrades = state.trades.slice(0,5).map(t=>`
+  const recent=S.trades.slice(0,5).map(t=>`
     <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:#111119;border-radius:8px;font-size:12px;flex-wrap:wrap">
-      ${pill(t.result==="WIN"?"green":t.result==="LOSS"?"red":"muted",t.result)}
-      ${pill(t.quality==="A+"?"accent":"blue",t.quality||"–")}
+      ${pill(t.result==="WIN"?"green":t.result==="LOSS"?"red":"muted",t.result,true)}
+      ${pill(t.quality==="A+"?"accent":"blue",t.quality||"–",true)}
       <span style="color:#e8e4dc;font-weight:600">${t.instrument}</span>
       <span style="color:#6b6880">${t.strategy}</span>
       <span class="mono" style="margin-left:auto;color:${t.r>0?"#4ade80":t.r<0?"#f87171":"#6b6880"}">${t.r>0?"+":""}${t.r}R</span>
+      ${!t.rulebased?pill("red","Nicht regelb.",true):""}
     </div>`).join("");
 
-  return `
-    <div style="display:flex;flex-direction:column;gap:18px">
-      <div style="display:flex;gap:10px;flex-wrap:wrap">${statCards}</div>
-      <div class="grid2">
-        <div class="card"><div class="slabel">Prop Konten</div>${accountCards||'<div style="color:#6b6880;font-size:12px">Noch keine Konten eingetragen</div>'}</div>
-        <div class="card"><div class="slabel">Letzte 5 Trades</div><div style="display:flex;flex-direction:column;gap:6px">${recentTrades||'<div style="color:#6b6880;font-size:12px">Noch keine Trades</div>'}</div></div>
-      </div>
-    </div>`;
+  return`<div style="display:flex;flex-direction:column;gap:18px">
+    ${ddWarn?`<div style="background:#f8717115;border:1px solid #f87171;border-radius:10px;padding:12px 16px;color:#f87171;font-size:13px">⚠️ <strong>DD-Warnung:</strong> Heute bereits ${dailyDD.toFixed(1)}R Verlust — näher als 2% Daily Limit!</div>`:""}
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      ${sc("Gesamt P&L",`${stats.totalR}R`,stats.totalR>0?"#4ade80":"#f87171",`${stats.wins}W / ${stats.losses}L`)}
+      ${sc("Win Rate",`${stats.wr}%`,"#c8a96e",`PF: ${stats.pf}`)}
+      ${sc("Heute",`${todayS.totalR}R`,todayS.totalR>0?"#4ade80":todayS.totalR<0?"#f87171":"#6b6880",`${todayT.length} Trades`)}
+      ${sc("Streak",streak>0?`${streak}× ${sType==="WIN"?"WIN":"LOSS"}`:"–",sType==="WIN"?"#4ade80":sType==="LOSS"?"#f87171":"#6b6880")}
+      ${sc("Net ROI",`${net>=0?"+":""}€${net.toLocaleString()}`,net>=0?"#4ade80":"#f87171","Prop Gesamt")}
+    </div>
+    <div class="grid2">
+      <div class="card"><div class="slabel">Prop Konten</div>${accs||'<div style="color:#6b6880;font-size:12px">Noch keine Konten</div>'}</div>
+      <div class="card"><div class="slabel">Letzte 5 Trades</div><div style="display:flex;flex-direction:column;gap:6px">${recent||'<div style="color:#6b6880;font-size:12px">Noch keine Trades</div>'}</div></div>
+    </div>
+    ${S.insights.length>0?`<div class="card"><div class="slabel">Letzte Insights</div><div style="display:flex;flex-direction:column;gap:8px">
+      ${S.insights.slice(0,3).map(ins=>`<div style="padding:10px 12px;background:#111119;border-radius:8px;display:flex;gap:10px;align-items:flex-start">
+        ${pill("accent",ins.kategorie||"Insight",true)}
+        <div style="flex:1"><div style="color:#e8e4dc;font-size:12px;font-weight:600">${ins.titel||"–"}</div><div style="color:#6b6880;font-size:11px;margin-top:2px">${ins.auswahl||""} · ${ins.strategie||""}</div></div>
+      </div>`).join("")}
+    </div></div>`:""}
+  </div>`;
 }
 
+// ── PROP KONTEN ───────────────────────────────────────────────────────────────
 function renderPropKonten(){
-  const riskByPhase={"Phase 1":2.0,"Phase 2":1.5,"Funded":0.75};
-  const accountCards = state.accounts.map(a=>{
+  const rBP={"Phase 1":2.0,"Phase 2":1.5,"Funded":0.75};
+  const cards=S.accounts.map(a=>{
     const net=a.totalPayout-a.totalPaid,roi=a.totalPaid>0?((net/a.totalPaid)*100).toFixed(0):0;
     const pp=Math.min((a.currentProfit/a.profitTarget*100)||0,100),dp=Math.min((a.currentDD/a.ddLimit*100)||0,100);
-    return `<div class="card" style="margin-bottom:14px">
+    const phMsg=a.phase==="Funded"?"✓ Funded — konservativ traden. Ziel: konstante Auszahlungen.":a.phase==="Phase 2"?"Phase 2 — ausgewogen. Profit-Target sicher erreichen.":"Phase 1 — aggressiver Modus erlaubt. Schnell zum Target.";
+    const phCol=a.phase==="Funded"?"#4ade80":a.phase==="Phase 2"?"#60a5fa":"#fbbf24";
+    return`<div class="card" style="margin-bottom:14px">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
         <div><div style="color:#e8e4dc;font-weight:700;font-size:16px">${a.firm} — ${a.currency||"EUR"} ${(a.size||0).toLocaleString()}</div>
         <div style="color:#6b6880;font-size:11px;margin-top:2px">${a.attempts||1} Versuch(e) · €${a.totalPaid} investiert</div></div>
@@ -222,66 +235,83 @@ function renderPropKonten(){
       </div>
       <div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="color:#6b6880;font-size:11px">Profit Progress</span><span style="color:#e8e4dc;font-size:11px">${a.currentProfit}% / ${a.profitTarget}%</span></div><div style="background:#2a2a3a;border-radius:4px;height:8px"><div style="width:${pp}%;height:100%;background:#4ade80;border-radius:4px"></div></div></div>
       <div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="color:#6b6880;font-size:11px">Drawdown</span><span style="color:${dp>70?"#f87171":"#e8e4dc"};font-size:11px">${a.currentDD}% / ${a.ddLimit}%</span></div><div style="background:#2a2a3a;border-radius:4px;height:8px"><div style="width:${dp}%;height:100%;background:${dp>70?"#f87171":dp>50?"#fbbf24":"#4ade80"};border-radius:4px"></div></div></div>
-      <div style="display:flex;justify-content:flex-end"><button class="btn btn-red" onclick="deleteAccount(${a.id})">🗑 Löschen</button></div>
+      <div style="padding:10px 12px;background:${phCol}12;border:1px solid ${phCol}33;border-radius:8px;color:${phCol};font-size:12px;margin-bottom:12px">${phMsg}</div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-blue" style="font-size:11px;padding:5px 12px" onclick="editAccount(${a.id})">✏️ Bearbeiten</button>
+        <button class="btn btn-red" style="font-size:11px;padding:5px 12px" onclick="deleteAccount(${a.id})">🗑 Löschen</button>
+      </div>
     </div>`;
   }).join("");
 
-  const addForm = state.showAddAccount ? `<div class="card" style="margin-bottom:14px">
+  const addForm=S.showAddAccount?`<div class="card" style="margin-bottom:14px">
     <div class="slabel">Neues Prop-Konto</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:14px">
-      ${[["Firm","acc_firm","text",""],["Account-Größe","acc_size","number","100000"],["Challenge Kosten","acc_cost","number","0"],["Anzahl Versuche","acc_attempts","number","1"],["Gesamt bezahlt","acc_paid","number","0"],["Ausgezahlt","acc_payout","number","0"],["DD Limit (%)","acc_dd","number","10"],["Profit Target (%)","acc_target","number","10"],["Aktueller Profit (%)","acc_profit","number","0"],["Aktuelles DD (%)","acc_curdd","number","0"],["Split (%)","acc_split","number","80"]].map(([l,id,t,v])=>`<div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">${l}</div><input id="${id}" class="inp" type="${t}" value="${v}" placeholder="${l}"></div>`).join("")}
+      ${[["Firm","acc_firm","text",""],["Account-Größe","acc_size","number","100000"],["Challenge Kosten (€)","acc_cost","number","0"],["Anzahl Versuche","acc_attempts","number","1"],["Gesamt bezahlt (€)","acc_paid","number","0"],["Ausgezahlt (€)","acc_payout","number","0"],["DD Limit (%)","acc_dd","number","10"],["Profit Target (%)","acc_target","number","10"],["Aktueller Profit (%)","acc_profit","number","0"],["Aktuelles DD (%)","acc_curdd","number","0"],["Split (%)","acc_split","number","80"]].map(([l,id,t,v])=>`<div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">${l}</div><input id="${id}" class="inp" type="${t}" value="${v}" placeholder="${l}"></div>`).join("")}
       <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Phase</div><select id="acc_phase" class="inp"><option>Phase 1</option><option>Phase 2</option><option>Funded</option></select></div>
       <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Währung</div><select id="acc_currency" class="inp"><option>EUR</option><option>USD</option></select></div>
     </div>
-    <div style="display:flex;gap:8px"><button class="btn btn-accent" onclick="saveAccount()">Speichern</button><button class="btn btn-muted" onclick="setState({showAddAccount:false})">Abbrechen</button></div>
-  </div>` : "";
+    <div style="display:flex;gap:8px"><button class="btn btn-accent" onclick="saveAccount()">Speichern</button><button class="btn btn-muted" onclick="set({showAddAccount:false})">Abbrechen</button></div>
+  </div>`:"";
 
-  return `<div style="display:flex;flex-direction:column;gap:0">
-    <div style="display:flex;justify-content:flex-end;margin-bottom:14px"><button class="btn btn-accent" onclick="setState({showAddAccount:true})">+ Konto hinzufügen</button></div>
+  return`<div>
+    <div style="display:flex;justify-content:flex-end;margin-bottom:14px"><button class="btn btn-accent" onclick="set({showAddAccount:true})">+ Konto hinzufügen</button></div>
     ${addForm}
-    ${accountCards||'<div style="color:#6b6880;font-size:13px;padding:20px;text-align:center">Noch keine Konten. Füge dein erstes Prop-Konto hinzu.</div>'}
+    ${cards||'<div style="color:#6b6880;font-size:13px;padding:20px;text-align:center">Noch keine Konten. Füge dein erstes Prop-Konto hinzu.</div>'}
   </div>`;
 }
 
+// ── MENTAL ────────────────────────────────────────────────────────────────────
 function renderMental(){
-  const sliders=[["schlaf","😴 Schlaf"],["energie","⚡ Energie"],["fokus","🎯 Fokus"],["stress","😤 Stress (niedrig = gut)"],["motivation","🔥 Motivation"],["koerper","💪 Körper"]];
-  const vals = state.mentalVals || {schlaf:7,energie:7,fokus:7,stress:3,motivation:8,koerper:7};
+  const v=S.mentalVals;
+  const sliders=[["schlaf","😴 Schlaf"],["energie","⚡ Energie"],["fokus","🎯 Fokus"],["stress","😤 Stress (niedrig = gut)"],["motivation","🔥 Motivation"],["koerper","💪 Körper / Fitness"]];
   const pos=["schlaf","energie","fokus","motivation","koerper"];
-  const pScore=pos.reduce((s,k)=>s+vals[k],0)/pos.length;
-  const score=((pScore+(11-vals.stress))/2).toFixed(1);
+  const pS=pos.reduce((s,k)=>s+v[k],0)/pos.length;
+  const score=((pS+(11-v.stress))/2).toFixed(1);
   const light=score>=7?"green":score>=5?"yellow":"red";
-  const msg=score>=7?"✓ Grünes Licht — du bist ready to trade.":score>=5?"! Gelb — trade kleiner oder sei extra diszipliniert.":"✗ Rot — heute lieber kein Trading.";
-  const lightColor=light==="green"?"#4ade80":light==="yellow"?"#fbbf24":"#f87171";
+  const lCol=light==="green"?"#4ade80":light==="yellow"?"#fbbf24":"#f87171";
+  const msg=score>=7?"✓ Grünes Licht — du bist ready to trade.":score>=5?"! Gelb — trade kleiner oder sei extra diszipliniert.":"✗ Rot — heute lieber kein Trading. Risiko für Fehler zu hoch.";
 
-  return `<div style="display:flex;flex-direction:column;gap:16px;max-width:600px">
+  const hist=S.mentalHistory.slice(0,7).map(m=>{
+    const mS=((["schlaf","energie","fokus","motivation","koerper"].reduce((s,k)=>s+(m[k]||7),0)/5+(11-(m.stress||3)))/2).toFixed(1);
+    const mc=mS>=7?"#4ade80":mS>=5?"#fbbf24":"#f87171";
+    return`<div style="padding:8px 12px;background:#111119;border-radius:8px;display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+      <span style="color:#6b6880;font-size:11px">${m.date||"–"}</span>
+      <span class="mono" style="color:${mc};font-size:13px">${mS}/10</span>
+      ${m.note?`<span style="color:#6b6880;font-size:11px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${m.note}</span>`:""}
+    </div>`;
+  }).join("");
+
+  return`<div style="display:flex;flex-direction:column;gap:16px;max-width:600px">
     <div class="card">
-      <div class="slabel">Tages Check-in</div>
+      <div class="slabel">Tages Check-in — Wie geht's dir heute?</div>
       ${sliders.map(([k,l])=>`<div style="margin-bottom:14px">
         <div style="display:flex;justify-content:space-between;margin-bottom:6px">
           <span style="color:#e8e4dc;font-size:13px">${l}</span>
-          <span class="mono" style="color:#c8a96e;font-size:14px" id="val_${k}">${vals[k]} / 10</span>
+          <span class="mono" style="color:#c8a96e;font-size:14px" id="val_${k}">${v[k]} / 10</span>
         </div>
-        <input type="range" min="1" max="10" value="${vals[k]}" oninput="updateSlider('${k}',this.value)">
+        <input type="range" min="1" max="10" value="${v[k]}" oninput="updateSlider('${k}',+this.value)">
       </div>`).join("")}
-      <div style="margin-top:16px"><div style="color:#6b6880;font-size:10px;margin-bottom:6px">Notizblock</div>
-      <textarea id="mental_note" rows="4" class="inp" style="resize:vertical" placeholder="Sport? Schritte? Stress im Job? Das alles beeinflusst dein Trading..."></textarea></div>
+      <div style="margin-top:8px"><div style="color:#6b6880;font-size:10px;margin-bottom:6px">Notizblock — Was ist gerade los?</div>
+      <textarea id="mental_note" rows="4" class="inp" style="resize:vertical" placeholder="Sport? Schritte? Stress im Job? Beschäftigt dich was? Das alles beeinflusst dein Trading..."></textarea></div>
       <button class="btn btn-accent" style="margin-top:12px" onclick="saveMental()">Check-in speichern</button>
     </div>
-    <div style="padding:20px 24px;background:#15151f;border:2px solid ${lightColor}33;border-radius:12px">
+    <div style="padding:20px 24px;background:#15151f;border:2px solid ${lCol}33;border-radius:12px">
       <div style="display:flex;align-items:center;gap:14px">
-        <div style="width:48px;height:48px;border-radius:50%;background:${lightColor};display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">${light==="green"?"✓":light==="yellow"?"!":"✗"}</div>
+        <div style="width:48px;height:48px;border-radius:50%;background:${lCol};display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">${light==="green"?"✓":light==="yellow"?"!":"✗"}</div>
         <div><div style="color:#e8e4dc;font-weight:700;font-size:16px;margin-bottom:4px">Mental Score: ${score} / 10</div><div style="color:#6b6880;font-size:13px">${msg}</div></div>
       </div>
     </div>
+    ${hist?`<div class="card"><div class="slabel">Letzte Check-ins</div>${hist}</div>`:""}
   </div>`;
 }
 
+// ── JOURNAL ───────────────────────────────────────────────────────────────────
 function renderJournal(){
-  if(state.viewTrade){
-    const t=state.viewTrade;
-    return `<div style="display:flex;flex-direction:column;gap:14px">
+  if(S.viewTrade){
+    const t=S.viewTrade;
+    return`<div style="display:flex;flex-direction:column;gap:14px">
       <div style="display:flex;justify-content:space-between;align-items:center">
-        <button class="btn btn-muted" onclick="setState({viewTrade:null})">← Zurück</button>
+        <button class="btn btn-muted" onclick="set({viewTrade:null})">← Zurück</button>
         <div style="display:flex;gap:8px">
           <button class="btn btn-accent" onclick="startEdit()">✏️ Bearbeiten</button>
           <button class="btn btn-red" onclick="deleteTrade(${t.id})">🗑 Löschen</button>
@@ -291,56 +321,53 @@ function renderJournal(){
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center">
           ${pill(t.result==="WIN"?"green":t.result==="LOSS"?"red":"muted",t.result)}
           ${pill(t.quality==="A+"?"accent":"blue",t.quality||"–")}
+          ${!t.rulebased?pill("red","Nicht regelbasiert"):""}
           <span style="color:#e8e4dc;font-weight:700;font-size:16px">${t.instrument}</span>
           <span style="color:#6b6880">${t.strategy}</span>
           <span class="mono" style="margin-left:auto;color:${t.r>0?"#4ade80":t.r<0?"#f87171":"#6b6880"};font-size:20px">${t.r>0?"+":""}${t.r}R</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:14px">
-          ${[["Datum",t.date],["Uhrzeit",t.time],["Direction",t.direction],["Entry",t.entry],["SL",t.sl],["TP",t.tp],["Session",t.session],["Emotion",t.emotion]].filter(([,v])=>v).map(([l,v])=>`<div style="background:#111119;border-radius:7px;padding:8px 10px"><div style="color:#6b6880;font-size:9px;text-transform:uppercase">${l}</div><div style="color:#e8e4dc;font-size:12px;font-weight:600">${v}</div></div>`).join("")}
+          ${[["Datum",t.date],["Uhrzeit",t.time],["Direction",t.direction],["Entry",t.entry],["SL",t.sl],["TP",t.tp],["Session",t.session],["Emotion",t.emotion],["Konto",t.propAccount]].filter(([,v])=>v).map(([l,v])=>`<div style="background:#111119;border-radius:7px;padding:8px 10px"><div style="color:#6b6880;font-size:9px;text-transform:uppercase">${l}</div><div style="color:#e8e4dc;font-size:12px;font-weight:600">${v}</div></div>`).join("")}
         </div>
-        ${t.confluences?.length?`<div style="margin-bottom:14px"><div style="color:#6b6880;font-size:10px;margin-bottom:6px">Konfluenzen</div><div style="display:flex;gap:5px;flex-wrap:wrap">${t.confluences.map(c=>pill("blue",c)).join("")}</div></div>`:""}
-        ${t.notes?`<div style="color:#6b6880;font-size:12px;padding:10px 12px;background:#111119;border-radius:8px">${t.notes}</div>`:""}
+        ${t.confluences?.length?`<div style="margin-bottom:14px"><div style="color:#6b6880;font-size:10px;margin-bottom:6px">Konfluenzen</div><div style="display:flex;gap:5px;flex-wrap:wrap">${t.confluences.map(c=>pill("blue",c,true)).join("")}</div></div>`:""}
+        ${t.notes?`<div style="color:#6b6880;font-size:12px;padding:10px 12px;background:#111119;border-radius:8px;line-height:1.6">${t.notes}</div>`:""}
       </div>
       <div class="card">
         <div class="slabel">TradingView Chart-Links</div>
-        ${["Big Picture (HTF)","Entry Chart","Exit / Result"].map((label,i)=>`
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#111119;border-radius:8px;margin-bottom:8px">
-            <span style="color:#6b6880;font-size:12px;min-width:140px">${label}</span>
-            ${t.imgs[i]?`<a href="${t.imgs[i]}" target="_blank" style="color:#c8a96e;font-size:12px;font-weight:600;text-decoration:none;background:#c8a96e22;border:1px solid #c8a96e44;border-radius:6px;padding:5px 12px">↗ Chart öffnen</a>`:`<span style="color:#2a2a3a;font-size:11px">Kein Link</span>`}
-          </div>`).join("")}
+        ${["Big Picture (HTF)","Entry Chart","Exit / Result"].map((label,i)=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#111119;border-radius:8px;margin-bottom:8px">
+          <span style="color:#6b6880;font-size:12px;min-width:140px">${label}</span>
+          ${t.imgs[i]?`<a href="${t.imgs[i]}" target="_blank" style="color:#c8a96e;font-size:12px;font-weight:600;text-decoration:none;background:#c8a96e22;border:1px solid #c8a96e44;border-radius:6px;padding:5px 12px">↗ Chart öffnen</a>`:`<span style="color:#2a2a3a;font-size:11px">Kein Link hinterlegt</span>`}
+        </div>`).join("")}
       </div>
     </div>`;
   }
 
-  const blankForm = {date:new Date().toISOString().slice(0,10),time:"",instrument:"XAUUSD",strategy:"XAU V",session:"London",direction:"LONG",entry:"",sl:"",tp:"",result:"WIN",r:"",quality:"A+",rulebased:true,confluences:[],emotion:"Calm",notes:"",imgs:[null,null,null],propAccount:""};
-  if(!state.formData) state.formData = {...blankForm};
-  const f = state.formData;
-  const confs = CONFLUENCES[f.strategy]||[];
-  
-  const filterStrat = state.filterStrat||"ALL";
-  const filterResult = state.filterResult||"ALL";
-  const filtered = state.trades.filter(t=>(filterStrat==="ALL"||t.strategy===filterStrat)&&(filterResult==="ALL"||t.result===filterResult));
+  const blankForm={date:new Date().toISOString().slice(0,10),time:"",instrument:"XAUUSD",strategy:"XAU V",session:"London",direction:"LONG",entry:"",sl:"",tp:"",result:"WIN",r:"",quality:"A+",rulebased:true,confluences:[],emotion:"Calm",notes:"",imgs:[null,null,null],propAccount:""};
+  if(!S.formData)S.formData={...blankForm};
+  const f=S.formData;
+  const confs=CONFLUENCES[f.strategy]||[];
+  const filtered=S.trades.filter(t=>(S.filterStrat==="ALL"||t.strategy===S.filterStrat)&&(S.filterResult==="ALL"||t.result===S.filterResult));
 
-  return `<div style="display:flex;flex-direction:column;gap:14px">
+  return`<div style="display:flex;flex-direction:column;gap:14px">
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-      <button class="btn btn-accent" onclick="setState({showForm:!state.showForm,editMode:false,formData:{...${JSON.stringify(blankForm)}}})">+ Neuer Trade</button>
+      <button class="btn btn-accent" onclick="openNewForm()">+ Neuer Trade</button>
       <div style="display:flex;gap:5px;flex-wrap:wrap">
-        ${["ALL",...STRATEGIES].map(s=>`<button style="background:${filterStrat===s?"#1f1f2e":"transparent"};color:${filterStrat===s?"#e8e4dc":"#6b6880"};border:1px solid #1f1f2e;border-radius:6px;padding:4px 10px;font-size:10px;cursor:pointer;font-family:inherit" onclick="setState({filterStrat:'${s}'})">${s}</button>`).join("")}
+        ${["ALL",...STRATEGIES].map(s=>`<button style="background:${S.filterStrat===s?"#1f1f2e":"transparent"};color:${S.filterStrat===s?"#e8e4dc":"#6b6880"};border:1px solid #1f1f2e;border-radius:6px;padding:4px 10px;font-size:10px;cursor:pointer;font-family:inherit" onclick="set({filterStrat:'${s}'})">${s}</button>`).join("")}
       </div>
       <div style="display:flex;gap:5px">
-        ${["ALL","WIN","LOSS","BE"].map(r=>`<button style="background:${filterResult===r?"#1f1f2e":"transparent"};color:${filterResult===r?"#e8e4dc":"#6b6880"};border:1px solid #1f1f2e;border-radius:6px;padding:4px 10px;font-size:10px;cursor:pointer;font-family:inherit" onclick="setState({filterResult:'${r}'})">${r}</button>`).join("")}
+        ${["ALL","WIN","LOSS","BE"].map(r=>`<button style="background:${S.filterResult===r?"#1f1f2e":"transparent"};color:${S.filterResult===r?"#e8e4dc":"#6b6880"};border:1px solid #1f1f2e;border-radius:6px;padding:4px 10px;font-size:10px;cursor:pointer;font-family:inherit" onclick="set({filterResult:'${r}'})">${r}</button>`).join("")}
       </div>
     </div>
-    
-    ${state.showForm?`<div class="card">
-      <div class="slabel">${state.editMode?"Trade bearbeiten":"Neuer Trade"}</div>
-      ${state.editMode?`<div style="margin-bottom:10px;padding:8px 12px;background:#c8a96e15;border:1px solid #c8a96e33;border-radius:7px;color:#c8a96e;font-size:11px">Bearbeitungsmodus</div>`:""}
+
+    ${S.showForm?`<div class="card">
+      <div class="slabel">${S.editMode?"Trade bearbeiten":"Neuer Trade"}</div>
+      ${S.editMode?`<div style="margin-bottom:10px;padding:8px 12px;background:#c8a96e15;border:1px solid #c8a96e33;border-radius:7px;color:#c8a96e;font-size:11px">Bearbeitungsmodus — Änderungen werden in der Datenbank gespeichert.</div>`:""}
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:14px">
         <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Datum</div><input id="f_date" class="inp" type="date" value="${f.date}"></div>
-        <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Uhrzeit</div><input id="f_time" class="inp" type="time" value="${f.time}"></div>
+        <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Uhrzeit</div><input id="f_time" class="inp" type="time" value="${f.time||""}"></div>
         <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Strategie</div><select id="f_strategy" class="inp" onchange="updateStrategy(this.value)">${STRATEGIES.map(s=>`<option ${s===f.strategy?"selected":""}>${s}</option>`).join("")}</select></div>
         <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Instrument</div><select id="f_instrument" class="inp">${(INSTRUMENTS[f.strategy]||[]).map(s=>`<option ${s===f.instrument?"selected":""}>${s}</option>`).join("")}</select></div>
-        <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Direction</div><select id="f_direction" class="inp"><option ${f.direction==="LONG"?"selected":""}>LONG</option><option ${f.direction==="SHORT"?"selected":""}>SHORT</option></select></div>
+        <div><div style="color:#6b6680;font-size:10px;margin-bottom:4px">Direction</div><select id="f_direction" class="inp"><option ${f.direction==="LONG"?"selected":""}>LONG</option><option ${f.direction==="SHORT"?"selected":""}>SHORT</option></select></div>
         <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Entry</div><input id="f_entry" class="inp" type="number" value="${f.entry}"></div>
         <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Stop Loss</div><input id="f_sl" class="inp" type="number" value="${f.sl}"></div>
         <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Take Profit</div><input id="f_tp" class="inp" type="number" value="${f.tp}"></div>
@@ -349,37 +376,38 @@ function renderJournal(){
         <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Setup-Qualität</div><select id="f_quality" class="inp"><option ${f.quality==="A+"?"selected":""}>A+</option><option ${f.quality==="B"?"selected":""}>B</option><option ${f.quality==="C"?"selected":""}>C</option></select></div>
         <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Session</div><select id="f_session" class="inp"><option>London</option><option>New York</option><option>Asia</option><option>Overlap</option></select></div>
         <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Emotion</div><select id="f_emotion" class="inp"><option>Calm</option><option>Focused</option><option>FOMO</option><option>Revenge</option><option>Unsicher</option></select></div>
-        <div style="display:flex;align-items:center;gap:8px;padding-top:18px"><input type="checkbox" id="f_rulebased" ${f.rulebased?"checked":""}><label for="f_rulebased" style="color:#e8e4dc;font-size:12px">Regelbasiert?</label></div>
+        <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Prop Konto</div><select id="f_account" class="inp"><option value="">–</option>${S.accounts.map(a=>`<option value="${a.firm} ${Math.round((a.size||0)/1000)}k" ${f.propAccount===`${a.firm} ${Math.round((a.size||0)/1000)}k`?"selected":""}>${a.firm} ${Math.round((a.size||0)/1000)}k</option>`).join("")}</select></div>
+        <div style="display:flex;align-items:center;gap:8px;padding-top:18px"><input type="checkbox" id="f_rulebased" ${f.rulebased?"checked":""}><label for="f_rulebased" style="color:#e8e4dc;font-size:12px;cursor:pointer">Regelbasiert?</label></div>
       </div>
       <div style="margin-bottom:12px"><div style="color:#6b6880;font-size:10px;margin-bottom:6px">Konfluenzen</div>
-      <div style="display:flex;gap:5px;flex-wrap:wrap">${confs.map(c=>`<button style="background:${(f.confluences||[]).includes(c)?"#c8a96e33":"transparent"};color:${(f.confluences||[]).includes(c)?"#c8a96e":"#6b6880"};border:1px solid ${(f.confluences||[]).includes(c)?"#c8a96e":"#1f1f2e"};border-radius:5px;padding:4px 9px;font-size:11px;cursor:pointer;font-family:inherit" onclick="toggleConf('${c}')">${c}</button>`).join("")}</div></div>
-      <div style="margin-bottom:12px"><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Notizen</div><textarea id="f_notes" class="inp" rows="2" style="resize:vertical">${f.notes}</textarea></div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap">${confs.map(c=>`<button class="conf-btn ${(f.confluences||[]).includes(c)?"active":"inactive"}" onclick="toggleConf('${c}')">${c}</button>`).join("")}</div></div>
+      <div style="margin-bottom:12px"><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Notizen</div><textarea id="f_notes" class="inp" rows="2" style="resize:vertical">${f.notes||""}</textarea></div>
       <div style="margin-bottom:14px"><div style="color:#6b6880;font-size:10px;margin-bottom:8px">TradingView Chart-Links</div>
-      ${["Big Picture (HTF)","Entry Chart","Exit / Result"].map((label,i)=>`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="color:#6b6880;font-size:11px;min-width:130px">${label}</div><input id="f_img${i}" class="inp" type="url" value="${f.imgs[i]||""}" placeholder="https://www.tradingview.com/x/..."></div>`).join("")}
-      </div>
-      <div style="display:flex;gap:8px"><button class="btn btn-accent" onclick="saveForm()">${state.editMode?"Änderungen speichern":"Speichern"}</button><button class="btn btn-muted" onclick="setState({showForm:false,editMode:false})">Abbrechen</button></div>
+      ${["Big Picture (HTF)","Entry Chart","Exit / Result"].map((label,i)=>`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="color:#6b6880;font-size:11px;min-width:130px">${label}</div><input id="f_img${i}" class="inp" type="url" value="${f.imgs[i]||""}" placeholder="https://www.tradingview.com/x/...">${f.imgs[i]?`<a href="${f.imgs[i]}" target="_blank" style="color:#c8a96e;font-size:11px;text-decoration:none;white-space:nowrap">↗</a>`:""}</div>`).join("")}</div>
+      <div style="display:flex;gap:8px"><button class="btn btn-accent" onclick="saveForm()">${S.editMode?"Änderungen speichern":"Speichern"}</button><button class="btn btn-muted" onclick="closeForm()">Abbrechen</button></div>
     </div>`:""}
-    
+
     <div class="card" style="padding:0;overflow:hidden">
       <div style="overflow-x:auto">
         <table>
-          <thead><tr>${["Datum","Instrument","Strategie","Qual.","Dir","Result","R","Regelb.",""].map(h=>`<th>${h}</th>`).join("")}</tr></thead>
+          <thead><tr>${["Datum","Instrument","Strategie","Qual.","Dir","Result","R","Konfluenzen","Regelb.",""].map(h=>`<th>${h}</th>`).join("")}</tr></thead>
           <tbody>
-            ${filtered.map(t=>`<tr style="cursor:pointer" onclick="viewTrade(${t.id})">
+            ${filtered.map(t=>`<tr onclick="set({viewTrade:S.trades.find(x=>x.id===${t.id})})">
               <td style="color:#6b6880;white-space:nowrap">${t.date}</td>
               <td style="color:#e8e4dc;font-weight:600">${t.instrument}</td>
-              <td style="color:#6b6880">${t.strategy}</td>
-              <td>${pill(t.quality==="A+"?"accent":"blue",t.quality||"–")}</td>
-              <td>${pill(t.direction==="LONG"?"green":"red",t.direction)}</td>
-              <td>${pill(t.result==="WIN"?"green":t.result==="LOSS"?"red":"muted",t.result)}</td>
+              <td style="color:#6b6880;font-size:11px">${t.strategy}</td>
+              <td>${pill(t.quality==="A+"?"accent":"blue",t.quality||"–",true)}</td>
+              <td>${pill(t.direction==="LONG"?"green":"red",t.direction,true)}</td>
+              <td>${pill(t.result==="WIN"?"green":t.result==="LOSS"?"red":"muted",t.result,true)}</td>
               <td class="mono" style="color:${t.r>0?"#4ade80":t.r<0?"#f87171":"#6b6880"}">${t.r>0?"+":""}${t.r}R</td>
-              <td>${t.rulebased?pill("green","✓"):pill("red","✗")}</td>
+              <td><div style="display:flex;gap:3px;flex-wrap:wrap">${(t.confluences||[]).slice(0,2).map(c=>pill("blue",c,true)).join("")}${(t.confluences||[]).length>2?pill("muted",`+${t.confluences.length-2}`,true):""}</div></td>
+              <td>${t.rulebased?pill("green","✓",true):pill("red","✗",true)}</td>
               <td onclick="event.stopPropagation()"><div style="display:flex;gap:4px">
                 <button style="background:transparent;color:#c8a96e;border:1px solid #c8a96e33;border-radius:5px;padding:3px 7px;font-size:10px;cursor:pointer" onclick="event.stopPropagation();editTradeById(${t.id})">✏️</button>
                 <button style="background:transparent;color:#f87171;border:1px solid #f8717133;border-radius:5px;padding:3px 7px;font-size:10px;cursor:pointer" onclick="event.stopPropagation();deleteTrade(${t.id})">🗑</button>
               </div></td>
             </tr>`).join("")}
-            ${filtered.length===0?`<tr><td colspan="9" style="color:#6b6880;text-align:center;padding:20px">Noch keine Trades</td></tr>`:""}
+            ${filtered.length===0?`<tr><td colspan="10" style="color:#6b6880;text-align:center;padding:20px">Noch keine Trades in dieser Kategorie</td></tr>`:""}
           </tbody>
         </table>
       </div>
@@ -387,39 +415,63 @@ function renderJournal(){
   </div>`;
 }
 
+// ── STRATEGIEN ────────────────────────────────────────────────────────────────
 function renderStrategien(){
-  const active = state.activeStrategy||"XAU V";
-  const info = STRATEGY_INFO[active];
-  const items = CHECKLISTS[active]||[];
-  const checked = state.checkedItems||{};
-  const score = items.filter((_,i)=>checked[`${active}-${i}`]).length;
+  const active=S.activeStrategy;
+  const info=STRATEGY_INFO[active];
+  const items=CHECKLISTS[active]||[];
+  const score=items.filter((_,i)=>S.checkedItems[`${active}-${i}`]).length;
+  const sigs=S.analyzerSignals;
+  const aligned=S.tfOrder.filter(tf=>sigs[tf]==="green").length;
+  const alignedRed=S.tfOrder.filter(tf=>sigs[tf]==="red").length;
+  const vG=aligned>=3,vR=alignedRed>=3;
 
-  return `<div style="display:flex;flex-direction:column;gap:14px">
+  return`<div style="display:flex;flex-direction:column;gap:14px">
     <div style="display:flex;gap:6px;flex-wrap:wrap">
-      ${STRATEGIES.map(s=>`<button style="background:${active===s?"#c8a96e":"transparent"};color:${active===s?"#000":"#6b6880"};border:1px solid ${active===s?"#c8a96e":"#1f1f2e"};border-radius:7px;padding:7px 14px;font-size:12px;cursor:pointer;font-weight:${active===s?700:400};font-family:inherit" onclick="setState({activeStrategy:'${s}'})">${s}</button>`).join("")}
+      ${STRATEGIES.map(s=>`<button style="background:${active===s?"#c8a96e":"transparent"};color:${active===s?"#000":"#6b6880"};border:1px solid ${active===s?"#c8a96e":"#1f1f2e"};border-radius:7px;padding:7px 14px;font-size:12px;cursor:pointer;font-weight:${active===s?700:400};font-family:inherit" onclick="set({activeStrategy:'${s}'})">${s}</button>`).join("")}
     </div>
     <div class="grid2">
       <div style="display:flex;flex-direction:column;gap:12px">
         <div class="card">
           <div style="color:#c8a96e;font-size:16px;font-weight:700;margin-bottom:12px">${active}</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
-            ${[["Pair",info.pair],["Session",info.session],["RR",info.rr],["WR",info.wr]].map(([l,v])=>`<div style="background:#111119;border-radius:7px;padding:9px 11px"><div style="color:#6b6880;font-size:9px;text-transform:uppercase;margin-bottom:3px">${l}</div><div style="color:#e8e4dc;font-size:12px;font-weight:600">${v}</div></div>`).join("")}
+            ${[["Pair/Instrument",info.pair],["Session",info.session],["RR",info.rr],["WR (historisch)",info.wr]].map(([l,v])=>`<div style="background:#111119;border-radius:7px;padding:9px 11px"><div style="color:#6b6880;font-size:9px;text-transform:uppercase;margin-bottom:3px">${l}</div><div style="color:#e8e4dc;font-size:12px;font-weight:600">${v}</div></div>`).join("")}
           </div>
           <div style="color:#6b6880;font-size:12px;line-height:1.7">${info.desc}</div>
         </div>
-        <div class="card"><div class="slabel">Konfluenzen</div><div style="display:flex;gap:5px;flex-wrap:wrap">${(CONFLUENCES[active]||[]).map(c=>pill("blue",c)).join("")}</div></div>
+
+        ${active==="Altcoin Ribbon"?`<div class="card">
+          <div class="slabel">Analyzer A — Ampel-Indikator</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div style="display:flex;align-items:center;gap:8px">
+              <div style="width:8px;height:8px;border-radius:50%;background:${vG?"#4ade80":vR?"#f87171":"#2a2a3a"}"></div>
+              <span style="font-size:12px;font-weight:700;color:${vG?"#4ade80":vR?"#f87171":"#6b6880"}">${vG?`LONG Signal (${aligned}/5)`:vR?`SHORT Signal (${alignedRed}/5)`:"Kein Signal"}</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;justify-content:space-between">
+            ${S.tfOrder.map(tf=>`<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+              <span style="color:#6b6880;font-size:10px;font-weight:600">${tf}</span>
+              ${["green","neutral","red"].map(val=>`<div onclick="setAnalyzer('${tf}','${val}')" style="width:28px;height:28px;border-radius:6px;background:${sigs[tf]===val?(val==="green"?"#4ade80":val==="red"?"#f87171":"#6b6880"):"#111119"};border:1px solid ${sigs[tf]===val?(val==="green"?"#4ade80":val==="red"?"#f87171":"#2a2a3a"):"#2a2a3a"};cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px">${val==="green"?"▲":val==="red"?"▼":"–"}</div>`).join("")}
+            </div>`).join("")}
+          </div>
+          ${vG||vR?`<div style="margin-top:12px;padding:10px 14px;background:${vG?"#4ade8012":"#f8717112"};border:1px solid ${vG?"#4ade8044":"#f8717144"};border-radius:8px;color:${vG?"#4ade80":"#f87171"};font-size:12px;font-weight:600">${vG?"✅ LONG-Bias bestätigt — mind. 3 TFs bullish. Entry nach Pullback auf Golden Pocket.":"✅ SHORT-Bias bestätigt — mind. 3 TFs bearish. Entry nach Pullback auf Golden Pocket."}</div>`:""}
+        </div>`:""}
+
+        <div class="card">
+          <div class="slabel">Konfluenzen für diesen Setup</div>
+          <div style="display:flex;gap:5px;flex-wrap:wrap">${(CONFLUENCES[active]||[]).map(c=>pill("blue",c)).join("")}</div>
+        </div>
       </div>
+
       <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
           <div style="color:#e8e4dc;font-size:14px;font-weight:700">Pre-Trade Checkliste</div>
-          <div style="color:${score===items.length?"#4ade80":"#6b6880"};font-size:12px;font-weight:600">${score}/${items.length}</div>
+          <div style="color:${score===items.length&&items.length>0?"#4ade80":"#6b6880"};font-size:12px;font-weight:600">${score}/${items.length}</div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:7px">
-          ${items.map((item,i)=>{const k=`${active}-${i}`;const ch=checked[k];return `<div onclick="toggleCheck('${k}')" style="display:flex;gap:10px;align-items:flex-start;padding:10px 12px;background:${ch?"#4ade8010":"#111119"};border:1px solid ${ch?"#4ade8044":"#1f1f2e"};border-radius:8px;cursor:pointer">
-            <div style="width:18px;height:18px;border-radius:4px;border:2px solid ${ch?"#4ade80":"#2a2a3a"};background:${ch?"#4ade80":"transparent"};display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:#000;margin-top:1px">${ch?"✓":""}</div>
-            <span style="color:${ch?"#4ade80":"#e8e4dc"};font-size:12px;text-decoration:${ch?"line-through":"none"};opacity:${ch?0.7:1};line-height:1.5">${item}</span>
-          </div>`;}).join("")}
-        </div>
+        ${items.map((item,i)=>{const k=`${active}-${i}`;const ch=S.checkedItems[k];return`<div class="check-item ${ch?"checked":""}" onclick="toggleCheck('${k}')">
+          <div class="check-box ${ch?"checked":""}">${ch?"✓":""}</div>
+          <span style="color:${ch?"#4ade80":"#e8e4dc"};font-size:12px;text-decoration:${ch?"line-through":"none"};opacity:${ch?0.7:1};line-height:1.5">${item}</span>
+        </div>`;}).join("")}
         ${score===items.length&&items.length>0?`<div style="margin-top:12px;padding:10px 12px;background:#4ade8015;border:1px solid #4ade8044;border-radius:8px;color:#4ade80;font-size:12px;text-align:center">✅ Alle Punkte gecheckt — Setup bestätigt!</div>`:""}
         <button class="btn btn-muted" style="margin-top:10px;font-size:11px;padding:5px 12px" onclick="resetChecklist('${active}')">Zurücksetzen</button>
       </div>
@@ -427,67 +479,92 @@ function renderStrategien(){
   </div>`;
 }
 
+// ── STATISTIK ─────────────────────────────────────────────────────────────────
 function renderStatistik(){
-  const fs = state.filterStatStrat||"ALL";
-  const fq = state.filterStatQuality||"ALL";
-  const filtered = state.trades.filter(t=>(fs==="ALL"||t.strategy===fs)&&(fq==="ALL"||t.quality===fq));
-  const stats = calcStats(filtered);
-  const byDay = ["Mo","Di","Mi","Do","Fr"].map((d,i)=>{const map={Mo:1,Di:2,Mi:3,Do:4,Fr:5};const t=filtered.filter(x=>new Date(x.date).getDay()===map[d]);return{day:d,r:+calcStats(t).totalR,n:t.length};});
-  const byStrategy = STRATEGIES.map(s=>{const t=filtered.filter(x=>x.strategy===s);const st=calcStats(t);return{name:s,...st,n:t.length};}).filter(s=>s.n>0);
+  const fs=S.filterStatStrat,fq=S.filterStatQuality;
+  const filtered=S.trades.filter(t=>(fs==="ALL"||t.strategy===fs)&&(fq==="ALL"||t.quality===fq));
+  const stats=calcStats(filtered);
+  const byDay=["Mo","Di","Mi","Do","Fr"].map((d,i)=>{const map={Mo:1,Di:2,Mi:3,Do:4,Fr:5};const t=filtered.filter(x=>new Date(x.date).getDay()===map[d]);return{day:d,r:+calcStats(t).totalR,n:t.length};});
+  const byStrat=STRATEGIES.map(s=>{const t=filtered.filter(x=>x.strategy===s);const st=calcStats(t);return{name:s,...st,n:t.length};}).filter(s=>s.n>0);
+  const byQuality=["A+","B","C"].map(q=>{const t=filtered.filter(x=>x.quality===q);const st=calcStats(t);return{q,wr:+st.wr,n:t.length};});
+  const confStats=()=>{const all=[...new Set(filtered.flatMap(t=>t.confluences||[]))];return all.map(c=>{const wC=filtered.filter(t=>(t.confluences||[]).includes(c));const woC=filtered.filter(t=>!(t.confluences||[]).includes(c));return{c,withWR:+calcStats(wC).wr,withoutWR:+calcStats(woC).wr,n:wC.length};}).filter(x=>x.n>=2).sort((a,b)=>b.withWR-a.withWR);};
+  const maxR=Math.max(...byDay.map(d=>Math.abs(d.r)),0.5);
 
-  const statCards = [
-    {label:"Win Rate",value:`${stats.wr}%`,color:"#c8a96e"},
-    {label:"Profit Factor",value:stats.pf,color:"#60a5fa"},
-    {label:"Gesamt R",value:`${stats.totalR}R`,color:stats.totalR>0?"#4ade80":"#f87171"},
-    {label:"Ø R/Trade",value:stats.avgR,color:stats.avgR>0?"#4ade80":"#f87171"},
-  ].map(s=>`<div style="background:#111119;border:1px solid #1f1f2e;border-radius:10px;padding:14px 18px;flex:1;min-width:130px"><div style="color:#6b6880;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px">${s.label}</div><div class="mono" style="color:${s.color};font-size:22px">${s.value}</div></div>`).join("");
-
-  const maxR = Math.max(...byDay.map(d=>Math.abs(d.r)),1);
-
-  return `<div style="display:flex;flex-direction:column;gap:14px">
+  return`<div style="display:flex;flex-direction:column;gap:14px">
     <div class="card">
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
         <div style="color:#6b6880;font-size:10px">Filter:</div>
-        <select style="background:#111119;border:1px solid #1f1f2e;border-radius:6px;padding:5px 9px;color:#e8e4dc;font-size:11px;font-family:inherit" onchange="setState({filterStatStrat:this.value})">
+        <select style="background:#111119;border:1px solid #1f1f2e;border-radius:6px;padding:5px 9px;color:#e8e4dc;font-size:11px;font-family:inherit" onchange="set({filterStatStrat:this.value})">
           <option value="ALL">Alle Strategien</option>${STRATEGIES.map(s=>`<option ${fs===s?"selected":""}>${s}</option>`).join("")}
         </select>
-        <select style="background:#111119;border:1px solid #1f1f2e;border-radius:6px;padding:5px 9px;color:#e8e4dc;font-size:11px;font-family:inherit" onchange="setState({filterStatQuality:this.value})">
+        <select style="background:#111119;border:1px solid #1f1f2e;border-radius:6px;padding:5px 9px;color:#e8e4dc;font-size:11px;font-family:inherit" onchange="set({filterStatQuality:this.value})">
           ${["ALL","A+","B","C"].map(q=>`<option value="${q}" ${fq===q?"selected":""}>${q==="ALL"?"Alle Qualitäten":q}</option>`).join("")}
         </select>
         <span style="color:#6b6880;font-size:10px">${filtered.length} Trades</span>
       </div>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">${statCards}</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      ${sc("Win Rate",`${stats.wr}%`,"#c8a96e")}${sc("Profit Factor",stats.pf,"#60a5fa")}${sc("Gesamt R",`${stats.totalR}R`,stats.totalR>0?"#4ade80":"#f87171")}${sc("Ø R/Trade",stats.avgR,stats.avgR>0?"#4ade80":"#f87171")}
+    </div>
     <div class="grid2">
       <div class="card">
         <div class="slabel">P&L nach Wochentag</div>
-        <div style="display:flex;gap:8px;align-items:flex-end;height:120px;padding:10px 0">
-          ${byDay.map(d=>`<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
-            <div style="font-size:10px;color:#6b6880;font-family:'DM Mono',monospace">${d.r>0?"+":""}${d.r}R</div>
-            <div style="width:100%;height:${Math.max(4,Math.abs(d.r)/maxR*80)}px;background:${d.r>0?"#4ade80":d.r<0?"#f87171":"#2a2a3a"};border-radius:3px 3px 0 0;min-height:4px"></div>
+        <div style="display:flex;gap:8px;align-items:flex-end;height:130px;padding:10px 0">
+          ${byDay.map(d=>`<div class="bar-day">
+            <div style="font-size:10px;color:${d.r>0?"#4ade80":d.r<0?"#f87171":"#6b6880"}" class="mono">${d.r!==0?(d.r>0?"+":"")+d.r+"R":""}</div>
+            <div style="width:100%;height:${Math.max(4,Math.abs(d.r)/maxR*80)}px;background:${d.r>0?"#4ade80":d.r<0?"#f87171":"#2a2a3a"};border-radius:3px 3px 0 0"></div>
             <div style="color:#6b6880;font-size:10px">${d.day}</div>
+            <div style="color:#2a2a3a;font-size:9px">${d.n>0?d.n+"T":""}</div>
           </div>`).join("")}
         </div>
       </div>
       <div class="card">
-        <div class="slabel">Performance pro Strategie</div>
-        <div style="display:flex;flex-direction:column;gap:7px">
-          ${byStrategy.map(s=>`<div style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:#111119;border-radius:8px">
-            <span style="color:#e8e4dc;font-weight:600;font-size:11px;min-width:100px">${s.name.replace(" Hunter","")}</span>
-            <span style="color:#6b6880;font-size:9px">WR</span><span style="color:#c8a96e;font-weight:700;font-size:11px">${s.wr}%</span>
-            <span style="color:#6b6880;font-size:9px">PF</span><span style="color:#60a5fa;font-weight:700;font-size:11px">${s.pf}</span>
-            <span style="color:${s.totalR>0?"#4ade80":"#f87171"};font-weight:700;font-size:11px;margin-left:auto">${s.totalR>0?"+":""}${s.totalR}R</span>
-          </div>`).join("")||'<div style="color:#6b6880;font-size:12px">Noch keine Daten</div>'}
+        <div class="slabel">Setup-Qualität vs. Win Rate</div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px">
+          ${byQuality.map(q=>`<div style="display:flex;align-items:center;gap:10px">
+            ${pill(q.q==="A+"?"accent":"blue",q.q)}
+            <div style="flex:1;background:#111119;border-radius:4px;height:10px;overflow:hidden"><div style="width:${q.wr}%;height:100%;background:${q.wr>=60?"#4ade80":q.wr>=40?"#fbbf24":"#f87171"};border-radius:4px"></div></div>
+            <span class="mono" style="color:#e8e4dc;font-size:12px;min-width:40px">${q.wr}%</span>
+            <span style="color:#6b6880;font-size:10px">(${q.n})</span>
+          </div>`).join("") || '<div style="color:#6b6880;font-size:12px">Noch keine Daten</div>'}
         </div>
       </div>
     </div>
+    <div class="card">
+      <div class="slabel">Performance pro Strategie</div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        ${byStrat.map(s=>`<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:#111119;border-radius:8px">
+          <span style="color:#e8e4dc;font-weight:600;font-size:12px;min-width:130px">${s.name}</span>
+          <span style="color:#6b6880;font-size:9px">WR</span><span style="color:#c8a96e;font-weight:700;font-size:12px">${s.wr}%</span>
+          <span style="color:#6b6880;font-size:9px">PF</span><span style="color:#60a5fa;font-weight:700;font-size:12px">${s.pf}</span>
+          <span style="color:#6b6880;font-size:9px">R</span><span style="color:${s.totalR>0?"#4ade80":"#f87171"};font-weight:700;font-size:12px">${s.totalR>0?"+":""}${s.totalR}R</span>
+          <span style="color:#2a2a3a;font-size:10px;margin-left:auto">${s.n} Trades</span>
+        </div>`).join("") || '<div style="color:#6b6880;font-size:12px">Noch keine Daten</div>'}
+      </div>
+    </div>
+    ${confStats().length>0?`<div class="card">
+      <div class="slabel">Konfluenz-Analyse — WR mit vs. ohne</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        ${confStats().slice(0,8).map(c=>`<div style="display:flex;align-items:center;gap:10px">
+          <span style="color:#e8e4dc;font-size:11px;min-width:180px">${c.c}</span>
+          <span style="color:#6b6880;font-size:9px">mit</span>
+          <div style="width:70px;background:#2a2a3a;border-radius:3px;height:7px;overflow:hidden"><div style="width:${c.withWR}%;height:100%;background:#4ade80;border-radius:3px"></div></div>
+          <span class="mono" style="color:#4ade80;font-size:11px;min-width:34px">${c.withWR}%</span>
+          <span style="color:#6b6880;font-size:9px">ohne</span>
+          <div style="width:70px;background:#2a2a3a;border-radius:3px;height:7px;overflow:hidden"><div style="width:${c.withoutWR}%;height:100%;background:#fbbf24;border-radius:3px"></div></div>
+          <span class="mono" style="color:#fbbf24;font-size:11px;min-width:34px">${c.withoutWR}%</span>
+          <span style="color:#2a2a3a;font-size:10px">n=${c.n}</span>
+        </div>`).join("")}
+      </div>
+    </div>`:""}
   </div>`;
 }
 
+// ── KALKULATOR ────────────────────────────────────────────────────────────────
 function renderKalkulator(){
-  const mode = state.kalcMode||"CFD";
-  const cfg = state.kalcCfg||{accountSize:100000,challengeCost:540,attempts:1,totalPayout:0,split:80,winRate:55,riskPct:1,rrRatio:2,ddLimit:10,profitTarget:10};
-  const {challengeCost,attempts,totalPayout,winRate,riskPct,rrRatio,ddLimit,profitTarget}=cfg;
+  const mode=S.kalcMode;
+  const cfg={...S.kalcCfg};
+  const{challengeCost,attempts,totalPayout,winRate,riskPct,rrRatio,ddLimit,profitTarget}=cfg;
   const totalInvested=challengeCost*attempts,net=totalPayout-totalInvested;
   const roi=totalInvested>0?((net/totalInvested)*100).toFixed(1):0;
   const avgTradeR=(winRate/100*riskPct*rrRatio)-((1-winRate/100)*riskPct);
@@ -495,41 +572,41 @@ function renderKalkulator(){
   const maxLosses=Math.floor(ddLimit/riskPct);
   const passChance=Math.max(0,Math.min(99,riskPct<=1?75:riskPct<=2?55:riskPct<=3?35:15));
   const risks=[0.25,0.5,0.75,1,1.25,1.5,1.75,2,2.5,3,4,5];
-  const maxScore=Math.max(...risks.map(r=>{const ev=(winRate/100*(r*rrRatio))-((1-winRate/100)*r);const p=Math.floor(ddLimit/r);return Math.max(0,ev*Math.min(p/5,1));}),0.01);
+  const maxSc=Math.max(...risks.map(r=>{const ev=(winRate/100*(r*rrRatio))-((1-winRate/100)*r);const p=Math.floor(ddLimit/r);return Math.max(0,ev*Math.min(p/5,1));}),0.01);
 
-  return `<div style="display:flex;flex-direction:column;gap:14px">
+  return`<div style="display:flex;flex-direction:column;gap:14px">
     <div style="display:flex;gap:8px">
-      ${["CFD","Futures"].map(m=>`<button style="background:${mode===m?"#c8a96e":"transparent"};color:${mode===m?"#000":"#6b6880"};border:1px solid ${mode===m?"#c8a96e":"#1f1f2e"};border-radius:7px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit" onclick="setState({kalcMode:'${m}'})">${m} Prop Firm</button>`).join("")}
+      ${["CFD","Futures"].map(m=>`<button style="background:${mode===m?"#c8a96e":"transparent"};color:${mode===m?"#000":"#6b6880"};border:1px solid ${mode===m?"#c8a96e":"#1f1f2e"};border-radius:7px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit" onclick="set({kalcMode:'${m}'})">${m} Prop Firm</button>`).join("")}
     </div>
     <div class="grid2">
       <div class="card">
         <div class="slabel">${mode==="CFD"?"CFD Settings (z.B. FTMO)":"Futures Settings (z.B. Tradeify)"}</div>
         <div style="display:flex;flex-direction:column;gap:9px">
-          ${[["Account Size","accountSize"],["Challenge Kosten (€)","challengeCost"],["Anzahl Versuche","attempts"],["Ausgezahlte Payouts (€)","totalPayout"],["Payout Split (%)","split"],["DD Limit (%)","ddLimit"],["Profit Target (%)","profitTarget"]].map(([l,k])=>`<div style="display:flex;justify-content:space-between;align-items:center"><span style="color:#6b6880;font-size:12px">${l}</span><input type="number" value="${cfg[k]}" oninput="updateKalc('${k}',this.value)" style="width:110px;background:#111119;border:1px solid #1f1f2e;border-radius:6px;padding:5px 8px;color:#e8e4dc;font-size:12px;text-align:right;font-family:inherit"></div>`).join("")}
+          ${[["Account Size (€)","accountSize"],["Challenge Kosten (€)","challengeCost"],["Anzahl Versuche","attempts"],["Ausgezahlte Payouts (€)","totalPayout"],["Payout Split (%)","split"],["DD Limit (%)","ddLimit"],["Profit Target (%)","profitTarget"]].map(([l,k])=>`<div style="display:flex;justify-content:space-between;align-items:center"><span style="color:#6b6880;font-size:12px">${l}</span><input type="number" value="${cfg[k]}" oninput="updateKalc('${k}',this.value)" style="width:110px;background:#111119;border:1px solid #1f1f2e;border-radius:6px;padding:5px 8px;color:#e8e4dc;font-size:12px;text-align:right;font-family:inherit"></div>`).join("")}
         </div>
       </div>
       <div class="card">
         <div class="slabel">Strategie-Risikoprofil</div>
         <div style="display:flex;flex-direction:column;gap:12px">
-          ${[["Win Rate (%)","winRate",30,80,1],["Risk pro Trade (%)","riskPct",0.25,5,0.25],["RR Ratio","rrRatio",1,5,0.25]].map(([l,k,min,max,step])=>`<div>
+          ${[["Win Rate (%)","winRate",30,80,1],["Risk pro Trade (%)","riskPct",0.25,5,0.25],["RR Ratio (1:X)","rrRatio",1,5,0.25]].map(([l,k,min,max,step])=>`<div>
             <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="color:#e8e4dc;font-size:12px">${l}</span><span class="mono" style="color:#c8a96e;font-size:14px">${cfg[k]}${k==="rrRatio"?"":"%"}</span></div>
             <input type="range" min="${min}" max="${max}" step="${step}" value="${cfg[k]}" oninput="updateKalc('${k}',this.value)">
           </div>`).join("")}
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px">
-            <div style="background:#111119;border-radius:8px;padding:10px 12px"><div style="color:#6b6880;font-size:9px">Max Verluste bis DD</div><div class="mono" style="color:${maxLosses<5?"#f87171":maxLosses<8?"#fbbf24":"#4ade80"};font-size:22px">${maxLosses}×</div></div>
-            <div style="background:#111119;border-radius:8px;padding:10px 12px"><div style="color:#6b6880;font-size:9px">Ø EV/Trade</div><div class="mono" style="color:${avgTradeR>0?"#4ade80":"#f87171"};font-size:22px">${avgTradeR.toFixed(2)}%</div></div>
+            <div style="background:#111119;border-radius:8px;padding:10px 12px"><div style="color:#6b6880;font-size:9px">Max Verluste bis DD-Limit</div><div class="mono" style="color:${maxLosses<5?"#f87171":maxLosses<8?"#fbbf24":"#4ade80"};font-size:22px">${maxLosses}×</div></div>
+            <div style="background:#111119;border-radius:8px;padding:10px 12px"><div style="color:#6b6880;font-size:9px">Ø Erwartungswert/Trade</div><div class="mono" style="color:${avgTradeR>0?"#4ade80":"#f87171"};font-size:22px">${avgTradeR.toFixed(2)}%</div></div>
           </div>
         </div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px">
-      ${[["Gesamt investiert",`€${totalInvested.toLocaleString()}`,"#f87171"],["Ausgezahlt",`€${totalPayout.toLocaleString()}`,"#4ade80"],["Netto P&L",`${net>=0?"+":""}€${net.toLocaleString()}`,net>=0?"#4ade80":"#f87171"],["ROI",`${roi}%`,parseFloat(roi)>=0?"#4ade80":"#f87171"],["Pass-Chance",`~${passChance}%`,passChance>=60?"#4ade80":passChance>=40?"#fbbf24":"#f87171"],["Trades für Target",`~${tradesNeeded}`,"#60a5fa"]].map(([l,v,c])=>`<div style="background:#111119;border:1px solid #1f1f2e;border-radius:10px;padding:14px 18px"><div style="color:#6b6880;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px">${l}</div><div class="mono" style="color:${c};font-size:20px">${v}</div></div>`).join("")}
+      ${[["Gesamt investiert",`€${totalInvested.toLocaleString()}`,"#f87171"],["Gesamt ausgezahlt",`€${totalPayout.toLocaleString()}`,"#4ade80"],["Netto P&L",`${net>=0?"+":""}€${net.toLocaleString()}`,net>=0?"#4ade80":"#f87171"],["ROI",`${roi}%`,parseFloat(roi)>=0?"#4ade80":"#f87171"],["Pass-Chance",`~${passChance}%`,passChance>=60?"#4ade80":passChance>=40?"#fbbf24":"#f87171"],["Trades für Target",`~${tradesNeeded}`,"#60a5fa"]].map(([l,v,c])=>sc(l,v,c)).join("")}
     </div>
     <div class="card">
       <div class="slabel">Optimaler Risk-Bereich bei ${ddLimit}% DD Limit</div>
       <div style="display:flex;gap:3px;align-items:flex-end;height:80px">
-        ${risks.map(r=>{const ev=(winRate/100*(r*rrRatio))-((1-winRate/100)*r);const p=Math.floor(ddLimit/r);const score=Math.max(0,ev*Math.min(p/5,1));const col=r<=1?"#4ade80":r<=2?"#fbbf24":"#f87171";return`<div onclick="updateKalc('riskPct','${r}')" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer">
-          <div style="width:100%;height:${Math.max(4,score/maxScore*60)}px;background:${col};border-radius:3px 3px 0 0;opacity:${r==riskPct?1:0.4};border:${r==riskPct?"2px solid #fff":"none"}"></div>
+        ${risks.map(r=>{const ev=(winRate/100*(r*rrRatio))-((1-winRate/100)*r);const p=Math.floor(ddLimit/r);const sc2=Math.max(0,ev*Math.min(p/5,1));const col=r<=1?"#4ade80":r<=2?"#fbbf24":"#f87171";return`<div onclick="updateKalc('riskPct','${r}')" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer">
+          <div style="width:100%;height:${Math.max(4,sc2/maxSc*60)}px;background:${col};border-radius:3px 3px 0 0;opacity:${r==riskPct?1:0.4};box-sizing:border-box;${r==riskPct?"border:2px solid #fff":""}"></div>
           <span style="color:${r==riskPct?"#c8a96e":"#6b6880"};font-size:8px">${r}%</span>
         </div>`;}).join("")}
       </div>
@@ -538,132 +615,151 @@ function renderKalkulator(){
   </div>`;
 }
 
-// Event handlers
-function attachEvents(){}
+// ── INSIGHTS ──────────────────────────────────────────────────────────────────
+function renderInsights(){
+  const f=S.insightForm;
+  const catColors={
+    "Setup-Idee":"accent","Trade-Review":"blue","Marktbeobachtung":"muted",
+    "Regelverstoß":"red","Mentale Notiz":"purple","Strategie-Anpassung":"yellow",
+    "Flip-Tag-Alarm":"green","News-Event":"muted"
+  };
 
-function updateSlider(key, val){
-  if(!state.mentalVals) state.mentalVals={schlaf:7,energie:7,fokus:7,stress:3,motivation:8,koerper:7};
-  state.mentalVals[key]=parseInt(val);
-  const el=document.getElementById(`val_${key}`);
-  if(el) el.textContent=`${val} / 10`;
-  // update score display
-  const vals=state.mentalVals;
-  const pos=["schlaf","energie","fokus","motivation","koerper"];
-  const pScore=pos.reduce((s,k)=>s+vals[k],0)/pos.length;
-  const score=((pScore+(11-vals.stress))/2).toFixed(1);
-  const light=score>=7?"green":score>=5?"yellow":"red";
-  const lightColor=light==="green"?"#4ade80":light==="yellow"?"#fbbf24":"#f87171";
-  const msg=score>=7?"✓ Grünes Licht — du bist ready to trade.":score>=5?"! Gelb — trade kleiner.":"✗ Rot — heute lieber kein Trading.";
+  return`<div style="display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;justify-content:flex-end">
+      <button class="btn btn-accent" onclick="set({showInsightForm:!S.showInsightForm})">+ Neuer Insight</button>
+    </div>
+
+    ${S.showInsightForm?`<div class="card">
+      <div class="slabel">Neuer TraderMind Insight</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+        <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Auswahl (Instrument / Pair / Coin)</div><input id="ins_auswahl" class="inp" value="${f.auswahl}" placeholder="z.B. XAUUSD, US500, BTC"></div>
+        <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Kategorie</div><select id="ins_kat" class="inp">${INSIGHT_CATS.map(c=>`<option ${f.kategorie===c?"selected":""}>${c}</option>`).join("")}</select></div>
+        <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Getroffene Strategie</div><select id="ins_strat" class="inp"><option value="">Kein Setup nach Regelwerk</option>${STRATEGIES.map(s=>`<option ${f.strategie===s?"selected":""}>${s}</option>`).join("")}</select></div>
+        <div><div style="color:#6b6880;font-size:10px;margin-bottom:4px">Titel</div><input id="ins_titel" class="inp" value="${f.titel}" placeholder="Kurzer, prägnanter Titel"></div>
+      </div>
+      ${[["Beobachtung","ins_beo","Was siehst du gerade? Was ist passiert? (2–3 Sätze)",f.beobachtung],["Detail","ins_det","Technische Details: TF, Struktur, LQ-Level, BOS, FVG, Konfluenzen, Session, News...",f.detail],["Mögliche Aktion","ins_akt","Entry warten? Beobachten? Kein Trade? Risiko anpassen?",f.aktion],["Anpassung","ins_anp","Gibt es eine Anpassung oder 'Keine Anpassung nötig'",f.anpassung]].map(([l,id,ph,val])=>`<div style="margin-bottom:10px"><div style="color:#6b6880;font-size:10px;margin-bottom:4px">${l}</div><textarea id="${id}" class="inp" rows="2" style="resize:vertical" placeholder="${ph}">${val||""}</textarea></div>`).join("")}
+      <div style="margin-bottom:14px">
+        <div style="color:#6b6880;font-size:10px;margin-bottom:8px">Bilder & Links (TradingView Snapshots)</div>
+        ${[["Big Picture (HTF)","ins_img0",f.imgBig],["Entry Chart","ins_img1",f.imgEntry],["Exit / Result","ins_img2",f.imgExit]].map(([l,id,val])=>`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="color:#6b6680;font-size:11px;min-width:130px">${l}</div><input id="${id}" class="inp" type="url" value="${val||""}" placeholder="https://www.tradingview.com/x/..."></div>`).join("")}
+      </div>
+      <div style="display:flex;gap:8px"><button class="btn btn-accent" onclick="saveInsight()">Insight speichern</button><button class="btn btn-muted" onclick="set({showInsightForm:false})">Abbrechen</button></div>
+    </div>`:""}
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      ${S.insights.map(ins=>`<div class="insight-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            ${pill(catColors[ins.kategorie]||"muted",ins.kategorie||"–")}
+            ${ins.strategie?pill("blue",ins.strategie,true):""}
+            ${ins.auswahl?`<span style="color:#c8a96e;font-size:12px;font-weight:600">${ins.auswahl}</span>`:""}
+          </div>
+          <button style="background:transparent;color:#f87171;border:1px solid #f8717133;border-radius:5px;padding:3px 7px;font-size:10px;cursor:pointer" onclick="deleteInsight(${ins.id})">🗑</button>
+        </div>
+        ${ins.titel?`<div style="color:#e8e4dc;font-size:14px;font-weight:700;margin-bottom:10px">${ins.titel}</div>`:""}
+        ${ins.beobachtung?`<div class="insight-field"><div class="insight-label">Beobachtung</div><div class="insight-value">${ins.beobachtung}</div></div>`:""}
+        ${ins.detail?`<div class="insight-field"><div class="insight-label">Detail</div><div class="insight-value" style="color:#6b6880">${ins.detail}</div></div>`:""}
+        ${ins.aktion?`<div class="insight-field"><div class="insight-label">Mögliche Aktion</div><div class="insight-value">${ins.aktion}</div></div>`:""}
+        ${ins.anpassung?`<div class="insight-field"><div class="insight-label">Anpassung</div><div class="insight-value" style="color:#6b6880">${ins.anpassung}</div></div>`:""}
+        ${(ins.img_big||ins.img_entry||ins.img_exit)?`<div style="display:flex;gap:8px;margin-top:10px">
+          ${[["Big Picture",ins.img_big],["Entry",ins.img_entry],["Exit",ins.img_exit]].filter(([,u])=>u).map(([l,u])=>`<a href="${u}" target="_blank" style="color:#c8a96e;font-size:11px;font-weight:600;text-decoration:none;background:#c8a96e22;border:1px solid #c8a96e44;border-radius:6px;padding:4px 10px">↗ ${l}</a>`).join("")}
+        </div>`:""}
+        <div style="margin-top:10px;color:#2a2a3a;font-size:10px">${ins.created_at?new Date(ins.created_at).toLocaleString("de-DE"):""}</div>
+      </div>`).join("") || '<div style="color:#6b6880;font-size:13px;text-align:center;padding:40px 0">Noch keine Insights. Füge deinen ersten Markt-Insight hinzu.</div>'}
+    </div>
+  </div>`;
 }
 
-function updateStrategy(val){
-  state.formData.strategy=val;
-  state.formData.instrument=(INSTRUMENTS[val]||[])[0]||"";
-  render();
+// ── EVENT HANDLERS ────────────────────────────────────────────────────────────
+function updateSlider(k,v){
+  S.mentalVals[k]=v;
+  const el=document.getElementById(`val_${k}`);
+  if(el)el.textContent=`${v} / 10`;
 }
 
-function toggleConf(c){
-  if(!state.formData.confluences) state.formData.confluences=[];
-  if(state.formData.confluences.includes(c)) state.formData.confluences=state.formData.confluences.filter(x=>x!==c);
-  else state.formData.confluences=[...state.formData.confluences,c];
-  render();
-}
+function updateStrategy(val){S.formData.strategy=val;S.formData.instrument=(INSTRUMENTS[val]||[])[0]||"";render();}
+function toggleConf(c){if(!S.formData.confluences)S.formData.confluences=[];const ci=S.formData.confluences.indexOf(c);if(ci>-1)S.formData.confluences.splice(ci,1);else S.formData.confluences.push(c);render();}
+function toggleCheck(k){S.checkedItems[k]=!S.checkedItems[k];render();}
+function resetChecklist(strat){Object.keys(S.checkedItems).filter(k=>k.startsWith(strat)).forEach(k=>delete S.checkedItems[k]);render();}
+function setAnalyzer(tf,val){S.analyzerSignals[tf]=val;render();}
+function updateKalc(k,v){if(!S.kalcCfg)S.kalcCfg={};S.kalcCfg[k]=parseFloat(v)||0;render();}
+function openNewForm(){S.formData={date:new Date().toISOString().slice(0,10),time:"",instrument:"XAUUSD",strategy:"XAU V",session:"London",direction:"LONG",entry:"",sl:"",tp:"",result:"WIN",r:"",quality:"A+",rulebased:true,confluences:[],emotion:"Calm",notes:"",imgs:[null,null,null],propAccount:""};set({showForm:true,editMode:false});}
+function closeForm(){set({showForm:false,editMode:false});}
+function viewTradeById(id){set({viewTrade:S.trades.find(x=>x.id===id)||null});}
+function startEdit(){if(!S.viewTrade)return;const t=S.viewTrade;S.formData={...t,r:String(t.r),entry:String(t.entry||""),sl:String(t.sl||""),tp:String(t.tp||"")};set({showForm:true,editMode:true});}
+function editTradeById(id){const t=S.trades.find(x=>x.id===id);if(!t)return;S.formData={...t,r:String(t.r),entry:String(t.entry||""),sl:String(t.sl||""),tp:String(t.tp||"")};set({showForm:true,editMode:true,viewTrade:null});}
+function editAccount(id){/* TODO: inline edit */alert("Konto-Bearbeitung: Bitte Konto löschen und neu anlegen.");}
 
-function toggleCheck(k){
-  state.checkedItems={...state.checkedItems,[k]:!state.checkedItems[k]};
-  render();
-}
-
-function resetChecklist(strat){
-  const keys=Object.keys(state.checkedItems).filter(k=>k.startsWith(strat));
-  keys.forEach(k=>delete state.checkedItems[k]);
-  render();
-}
-
-function viewTrade(id){const t=state.trades.find(x=>x.id===id);if(t)setState({viewTrade:t});}
-
-function startEdit(){
-  if(!state.viewTrade)return;
-  const t=state.viewTrade;
-  state.formData={...t,r:String(t.r),entry:String(t.entry||""),sl:String(t.sl||""),tp:String(t.tp||"")};
-  setState({showForm:true,editMode:true});
-}
-
-function editTradeById(id){
-  const t=state.trades.find(x=>x.id===id);
-  if(!t)return;
-  state.formData={...t,r:String(t.r),entry:String(t.entry||""),sl:String(t.sl||""),tp:String(t.tp||"")};
-  setState({showForm:true,editMode:true,viewTrade:null});
-}
-
-function getFormData(){
-  const g=id=>document.getElementById(id)?.value||"";
-  const gc=id=>document.getElementById(id)?.checked;
-  return {
-    date:g("f_date"),time:g("f_time"),instrument:g("f_instrument"),strategy:g("f_strategy"),
-    session:g("f_session"),direction:g("f_direction"),entry:parseFloat(g("f_entry"))||0,
-    sl:parseFloat(g("f_sl"))||0,tp:parseFloat(g("f_tp"))||0,result:g("f_result"),
-    r:parseFloat(g("f_r"))||0,quality:g("f_quality"),rulebased:gc("f_rulebased"),
-    confluences:state.formData?.confluences||[],emotion:g("f_emotion"),notes:g("f_notes"),
-    imgs:[g("f_img0")||null,g("f_img1")||null,g("f_img2")||null],
-    propAccount:""
+function getFormPayload(){
+  return{
+    date:gv("f_date"),time:gv("f_time"),instrument:gv("f_instrument"),strategy:gv("f_strategy"),
+    session:gv("f_session"),direction:gv("f_direction"),entry:parseFloat(gv("f_entry"))||0,
+    sl:parseFloat(gv("f_sl"))||0,tp:parseFloat(gv("f_tp"))||0,result:gv("f_result"),
+    r:parseFloat(gv("f_r"))||0,quality:gv("f_quality"),rulebased:gc("f_rulebased"),
+    confluences:S.formData?.confluences||[],emotion:gv("f_emotion"),notes:gv("f_notes"),
+    img_big:gv("f_img0")||null,img_entry:gv("f_img1")||null,img_exit:gv("f_img2")||null,
+    prop_account:gv("f_account")||""
   };
 }
 
 async function saveForm(){
-  const fd=getFormData();
-  if(!fd.r)return;
-  const payload={date:fd.date,time:fd.time,instrument:fd.instrument,strategy:fd.strategy,session:fd.session,direction:fd.direction,entry:fd.entry,sl:fd.sl,tp:fd.tp,result:fd.result,r:fd.r,quality:fd.quality,rulebased:fd.rulebased,confluences:fd.confluences,emotion:fd.emotion,notes:fd.notes,img_big:fd.imgs[0],img_entry:fd.imgs[1],img_exit:fd.imgs[2],prop_account:fd.propAccount};
-  if(state.editMode&&state.formData?.id){
-    try{await db.trades.upd(state.formData.id,payload);const updated=mapTrade({...payload,id:state.formData.id});setState({trades:state.trades.map(t=>t.id===state.formData.id?updated:t),showForm:false,editMode:false,viewTrade:updated});}
+  const p=getFormPayload();if(!p.r)return;
+  if(S.editMode&&S.formData?.id){
+    try{await db.trades.upd(S.formData.id,p);const u=mapTrade({...p,id:S.formData.id});set({trades:S.trades.map(t=>t.id===S.formData.id?u:t),showForm:false,editMode:false,viewTrade:u});}
     catch(e){alert("Fehler: "+e.message);}
   }else{
-    try{const result=await db.trades.add(payload);const saved=Array.isArray(result)?result[0]:result;setState({trades:[mapTrade(saved),...state.trades],showForm:false});}
+    try{const res=await db.trades.add(p);const saved=Array.isArray(res)?res[0]:res;set({trades:[mapTrade(saved),...S.trades],showForm:false});}
     catch(e){alert("Fehler: "+e.message);}
   }
 }
 
 async function deleteTrade(id){
   if(!confirm("Trade wirklich löschen?"))return;
-  try{await db.trades.del(id);setState({trades:state.trades.filter(t=>t.id!==id),viewTrade:null});}
+  try{await db.trades.del(id);set({trades:S.trades.filter(t=>t.id!==id),viewTrade:null});}
   catch(e){alert("Fehler: "+e.message);}
 }
 
 async function saveAccount(){
-  const g=id=>document.getElementById(id)?.value||"";
-  const riskByPhase={"Phase 1":2.0,"Phase 2":1.5,"Funded":0.75};
-  const phase=g("acc_phase");
-  const payload={firm:g("acc_firm"),size:parseFloat(g("acc_size"))||100000,phase,currency:g("acc_currency"),challenge_cost:parseFloat(g("acc_cost"))||0,attempts:parseInt(g("acc_attempts"))||1,total_paid:parseFloat(g("acc_paid"))||0,total_payout:parseFloat(g("acc_payout"))||0,dd_limit:parseFloat(g("acc_dd"))||10,profit_target:parseFloat(g("acc_target"))||10,current_profit:parseFloat(g("acc_profit"))||0,current_dd:parseFloat(g("acc_curdd"))||0,risk_phase:riskByPhase[phase]||1,split:parseFloat(g("acc_split"))||80};
-  try{const result=await db.accounts.add(payload);const saved=Array.isArray(result)?result[0]:result;setState({accounts:[...state.accounts,mapAccount(saved)],showAddAccount:false});}
+  const rBP={"Phase 1":2.0,"Phase 2":1.5,"Funded":0.75};
+  const phase=gv("acc_phase");
+  const p={firm:gv("acc_firm"),size:parseFloat(gv("acc_size"))||100000,phase,currency:gv("acc_currency"),challenge_cost:parseFloat(gv("acc_cost"))||0,attempts:parseInt(gv("acc_attempts"))||1,total_paid:parseFloat(gv("acc_paid"))||0,total_payout:parseFloat(gv("acc_payout"))||0,dd_limit:parseFloat(gv("acc_dd"))||10,profit_target:parseFloat(gv("acc_target"))||10,current_profit:parseFloat(gv("acc_profit"))||0,current_dd:parseFloat(gv("acc_curdd"))||0,risk_phase:rBP[phase]||1,split:parseFloat(gv("acc_split"))||80};
+  try{const res=await db.accounts.add(p);const saved=Array.isArray(res)?res[0]:res;set({accounts:[...S.accounts,mapAccount(saved)],showAddAccount:false});}
   catch(e){alert("Fehler: "+e.message);}
 }
 
 async function deleteAccount(id){
   if(!confirm("Konto löschen?"))return;
-  try{await db.accounts.del(id);setState({accounts:state.accounts.filter(a=>a.id!==id)});}
+  try{await db.accounts.del(id);set({accounts:S.accounts.filter(a=>a.id!==id)});}
   catch(e){alert("Fehler: "+e.message);}
 }
 
 async function saveMental(){
-  if(!state.mentalVals) state.mentalVals={schlaf:7,energie:7,fokus:7,stress:3,motivation:8,koerper:7};
-  const note=document.getElementById("mental_note")?.value||"";
-  const payload={date:new Date().toISOString().slice(0,10),...state.mentalVals,note};
-  try{await db.mental.add(payload);alert("Check-in gespeichert ✓");}
+  const p={date:new Date().toISOString().slice(0,10),...S.mentalVals,note:gv("mental_note")||""};
+  try{const res=await db.mental.add(p);const saved=Array.isArray(res)?res[0]:res;set({mentalHistory:[saved,...S.mentalHistory]});alert("✓ Check-in gespeichert!");}
   catch(e){alert("Fehler: "+e.message);}
 }
 
-function updateKalc(key, val){
-  if(!state.kalcCfg) state.kalcCfg={accountSize:100000,challengeCost:540,attempts:1,totalPayout:0,split:80,winRate:55,riskPct:1,rrRatio:2,ddLimit:10,profitTarget:10};
-  state.kalcCfg[key]=parseFloat(val)||0;
-  render();
+async function saveInsight(){
+  const p={auswahl:gv("ins_auswahl"),kategorie:gv("ins_kat"),strategie:gv("ins_strat"),titel:gv("ins_titel"),beobachtung:gv("ins_beo"),detail:gv("ins_det"),aktion:gv("ins_akt"),anpassung:gv("ins_anp"),img_big:gv("ins_img0")||null,img_entry:gv("ins_img1")||null,img_exit:gv("ins_img2")||null};
+  try{const res=await db.insights.add(p);const saved=Array.isArray(res)?res[0]:res;set({insights:[saved,...S.insights],showInsightForm:false});}
+  catch(e){alert("Fehler: "+e.message);}
 }
 
+async function deleteInsight(id){
+  if(!confirm("Insight löschen?"))return;
+  try{await db.insights.del(id);set({insights:S.insights.filter(i=>i.id!==id)});}
+  catch(e){alert("Fehler: "+e.message);}
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
 async function init(){
-  setState({loading:true,error:null});
+  set({loading:true,error:null});
   try{
-    const [t,a,m]=await Promise.all([db.trades.list(),db.accounts.list(),db.mental.list()]);
-    setState({trades:t.map(mapTrade),accounts:a.map(mapAccount),mentalHistory:m||[],loading:false});
-  }catch(e){setState({loading:false,error:e.message});}
+    // Try to load insights - table might not exist yet
+    let insightsData=[];
+    try{insightsData=await db.insights.list();}catch(e){console.log("Insights table not yet created");}
+    const[t,a,m]=await Promise.all([db.trades.list(),db.accounts.list(),db.mental.list()]);
+    set({trades:t.map(mapTrade),accounts:a.map(mapAccount),mentalHistory:m||[],insights:insightsData,loading:false});
+  }catch(e){set({loading:false,error:e.message});}
 }
 
 init();
